@@ -12,10 +12,10 @@ Public repo for National Institute of Technology Delhi's Tech Club, UpVision's w
 Designed and built as part of hacktoberfest 2020 Online event, and the tech club's SWAT initiative.
 
 The mentors for the project are,
-1. Beeta Samad [@DumbSkull](https://github.com/DumbSkull) - Leader, Project head.
-2. Rishikesh Anand [@Blakeinstein](https://github.com/Blakeinstein) - Repo manager, advisor.
-3. Abhishek Kumar Suman [@aksuman055](https://github.com/aksuman055) - Content manager.
-4. Prashant Chouhan [@Percy99](https://github.com/Percy99) - Technical advisor.
+1. Beeta Samad ([@DumbSkull](https://github.com/DumbSkull)) - Leader, Project head.
+2. Rishikesh Anand ([@Blakeinstein](https://github.com/Blakeinstein)) - Repo manager, advisor.
+3. Abhishek Kumar Suman ([@aksuman055](https://github.com/aksuman055)) - Content manager.
+4. Prashant Chouhan ([@Percy99](https://github.com/Percy99)) - Technical advisor.
 
 
 ## 🚀 Quick start
