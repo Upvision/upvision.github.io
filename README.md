@@ -1,68 +1,96 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<a href="https://upvision.github.io">
+  <p align="center">
+      <img alt="UpVision" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
+  </p>
+  <h1 align="center">
+    UpVision
+  </h1>
+</a>
 
-## Available Scripts
+Public repo for National Institute of Technology Delhi's Tech Club, UpVision's website, built with React and Gatsby with 💜.
 
-In the project directory, you can run:
+Designed and built as part of hacktoberfest 2020 Online event, and the tech club's SWAT initiative.
 
-### `npm start`
+The mentors for the project are,
+1. Beeta Samad ([@DumbSkull](https://github.com/DumbSkull)) - Leader, Project head.
+2. Rishikesh Anand ([@Blakeinstein](https://github.com/Blakeinstein)) - Repo manager, advisor.
+3. Abhishek Kumar Suman ([@aksuman055](https://github.com/aksuman055)) - Content manager.
+4. Prashant Chouhan ([@Percy99](https://github.com/Percy99)) - Technical advisor.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## 🚀 Quick start
 
-### `npm test`
+1.  **Setup Gatsby CLI**
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    The repository is built with yarnpkg and we suggest you use the same. however we understand that not everyone likes using yarn and are free to use npm instead. Alternatively, if you dont feel like installing gatsby globally, Just clone the repo and run gatsby commands by using scripts or npx.
+    
+    For yarn users,
+    ```shell
+    yarn add global gatsby-cli
+    ```
+    and for npm users,
+    ```shell
+    npm install -g gatsby-cli
+    ```
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2.  **Start developing.**
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+    Ideally you should fork the repository first, click the fork button at the top right corner.
+    
+    Clone the repository, and start developing. It is also suggested that feature implementations are to be implemented in a branch of your own repository.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    Optionally, if you have [Github-CLI](https://github.com/cli/cli) setup, you can use the following command. This should create a fork of the repo on your account, and clone it locally.
 
-### `npm run eject`
+    ```shell
+    gh repo fork Upvision/upvision.github.io --clone=true
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+3.  **Open the source code and start editing!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    To serve the website locally,
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    use `yarn serve` or `npm run serve`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    Open the directory you cloned into and in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🧐 What's inside?
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+A quick look at the top-level files and directories you'll see in a Gatsby project.
 
-### Code Splitting
+    .
+    ├── node_modules
+    ├── src
+    ├── .gitignore
+    ├── .prettierrc
+    ├── gatsby-browser.js
+    ├── gatsby-config.js
+    ├── gatsby-node.js
+    ├── gatsby-ssr.js
+    ├── LICENSE
+    ├── package-lock.json
+    ├── package.json
+    └── README.md
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+<h3> The things of note here are </h3>
 
-### Analyzing the Bundle Size
+1.  **`/src`**: This directory contains the actual source code for the project.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+2.  **`LICENSE`**: This website uses the MIT-license.
 
-### Making a Progressive Web App
+3.  **`package.json`**: A manifest file for Node.js projects, which includes things like metadata. This manifest is how npm knows which packages to install for your project.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+4.  **`README.md`**: This text file that you are reading right now.
 
-### Advanced Configuration
+## 🎓 Learning Resources
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+- **The gatsby documentation** can be found [on their website](https://www.gatsbyjs.com/docs). This contains various code-samples that you can refer. In particular, _Guides_, _API Reference_, and _Advanced Tutorials_ sections are worth checking out.
 
-### Deployment
+- **The gatsby tutorial** ideal for people new to the framework can find an [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.com/tutorial/).It starts with zero assumptions about your level of ability and walks through every step of the process.
+  
+## 💫 CI/CD
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+- The project uses github pages to host the webpage, and as such has a Continuos Integration workflow, setup on the master branch, that re-deploys the website on the release branch. As such, pushing to master aside from Pull Requests is prohibited.
 
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- The project will also have Continous Development workflow, to test incoming commits on Pull Requests, so that they build properly when merged.
