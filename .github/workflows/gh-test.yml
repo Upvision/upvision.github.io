@@ -12,9 +12,11 @@ jobs:
       -
         name: Checkout
         uses: actions/checkout@v2
+      
+      - uses: actions/setup-node@v2-beta
+      
       -
-        name: Build project
-        uses: actions/setup-node@v2-beta
+        name: Test build project
         run: |
           npm install
           npm run release
