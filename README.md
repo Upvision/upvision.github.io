@@ -16,7 +16,9 @@ The mentors for the project are,
 2. Rishikesh Anand ([@Blakeinstein](https://github.com/Blakeinstein)) - Repo manager, advisor.
 3. Abhishek Kumar Suman ([@aksuman055](https://github.com/aksuman055)) - Content manager.
 4. Prashant Chouhan ([@Percy99](https://github.com/Percy99)) - Technical advisor.
+5. Ritik Gupta ([@hey-ritikgupta](https://github.com/hey-ritikgupta))
 
+Contribution access has also been given to the web-dev team, ([@Upvision/web-dev](https://github.com/orgs/Upvision/teams/web-dev)).
 
 ## 🚀 Quick start
 
@@ -91,6 +93,6 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
   
 ## 💫 CI/CD
 
-- The project uses github pages to host the webpage, and as such has a Continuos Integration workflow, setup on the master branch, that re-deploys the website on the release branch. As such, pushing to master aside from Pull Requests is prohibited.
+- The project uses github pages to host the webpage, and as such has a Continuos Deployment workflow, setup on the master branch, that re-deploys the website on the release branch. As such, pushing to master aside from Pull Requests is prohibited.
 
-- The project will also have Continous Development workflow, to test incoming commits on Pull Requests, so that they build properly when merged.
+- The project will also have Continous Integration workflow, to test incoming commits on Pull Requests, so that they build properly when merged.
