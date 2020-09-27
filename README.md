@@ -16,7 +16,7 @@ The mentors for the project are,
 2. Rishikesh Anand ([@Blakeinstein](https://github.com/Blakeinstein)) - Repo manager, advisor.
 3. Abhishek Kumar Suman ([@aksuman055](https://github.com/aksuman055)) - Content manager.
 4. Prashant Chouhan ([@Percy99](https://github.com/Percy99)) - Technical advisor.
-5. Ritik Gupta ([@hey-ritikgupta](https://github.com/hey-ritikgupta))
+5. Ritik Gupta ([@hey-ritikgupta](https://github.com/hey-ritikgupta)) - Design Lead.
 
 Contribution access has also been given to the web-dev team, ([@Upvision/web-dev](https://github.com/orgs/Upvision/teams/web-dev)).
 
