@@ -18,6 +18,8 @@ The mentors for the project are,
 4. Prashant Chouhan ([@Percy99](https://github.com/Percy99)) - Technical advisor.
 5. Ritik Gupta ([@hey-ritikgupta](https://github.com/hey-ritikgupta))
 
+Contribution access has also been given to the web-dev team, ([@Upvision/web-dev](https://github.com/orgs/Upvision/teams/web-dev))
+
 ## 🚀 Quick start
 
 1.  **Setup Gatsby CLI**

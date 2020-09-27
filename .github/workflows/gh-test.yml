@@ -9,8 +9,12 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: enriikke/gatsby-gh-pages-action@v2
+      -
+        name: Checkout
+        uses: actions/checkout@v2
+      -
+        name: Build project
+        uses: enriikke/gatsby-gh-pages-action@v2
         with:
           access-token: ${{ secrets.ACCESS_TOKEN }}
           deploy-branch: release
