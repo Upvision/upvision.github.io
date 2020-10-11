@@ -26,26 +26,26 @@ function Box(props){
     )
 }
 
-function Text3d(props) {
-    loader = loader || new THREE.FontLoader();
-    loader.load('../fonts/')
-    return (
-        <>
-        </>
-    )
-}
+// function Text3d(props) {
+//     loader = loader || new THREE.FontLoader();
+//     loader.load('../fonts/')
+//     return (
+//         <>
+//         </>
+//     )
+// }
 
-Text3d.defaultProps = {
-    loader: null
-}
+// Text3d.defaultProps = {
+//     loader: null
+// }
 
 function Hero() {
     return(
         <Canvas>
             <ambientLight />
             <pointLight position = {[10, 10, 10]} />
-            {/* <Box position = {[-1.2, 0, 0]} />
-            <Box position = {[1.2, 0, 0]} /> */}
+            <Box position = {[-1.2, 0, 0]} />
+            <Box position = {[1.2, 0, 0]} />
         </Canvas>
     )
 }
