@@ -1,9 +1,12 @@
 import React, { Suspense, useRef, useState } from 'react'
 import { Canvas, useFrame, useLoader } from 'react-three-fiber'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { softShadows } from 'drei';
 
 import logoModel from "../assets/logo.glb";
 import "../css/hero.css";
+
+softShadows({ size: 0.005, frustrum: 2.75 });
 
 function Logo(props) {
     const group = useRef();
@@ -16,7 +19,6 @@ function Logo(props) {
         group.current.position.y = ((Math.sin(state.clock.getElapsedTime())) / 2)
         group.current.rotation.z += 0.01
     });
-    const PI = Math.PI;
 
     return (
         <mesh
@@ -26,23 +28,24 @@ function Logo(props) {
             dispose={null}
             geometry = {nodes.Curve001.geometry}
             scale = {active ? [46, 46, 46] : [42, 42, 42]}
-            rotation={[PI/2, 0, 0]}
+            rotation={[Math.PI / 2, 0, 0]}
             onClick = {(e) => setActive(!active)}
             onPointerOver = {(e) => setHover(true)}
             onPointerOut = {(e) => setHover(false)}
         >
-            <meshStandardMaterial attach="material" color={hovered? '#13E8B5' : 'lightblue'} />
+            <meshStandardMaterial attach="material" color={hovered? 'lightblue' : 'white'} />
         </mesh>
     )
 }
 function Hero() {
     return(
-        <Canvas>
-            <ambientLight />
-            <pointLight position = {[10, 10, 10]} />
+        <Canvas sRGB shadowMap camera={{ fov: 75 }}>
+            <ambientLight intensity={0.2} />
+            <pointLight position={[10, 10, 10]} />
+            <pointLight position={[-10, -10, -10]} intensity={0.5} />
             <directionalLight
                 castShadow
-                position={[10, 8, -5]}
+                position={[0, 10, -5]}
                 intensity={1.5}
                 shadow-mapSize-width={1024}
                 shadow-mapSize-height={1024}
@@ -55,9 +58,9 @@ function Hero() {
             <Suspense fallback={null}>
                 <Logo position = {[0, 0, 0]} />
             </Suspense>
-            <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -1.2, 0]} receiveShadow>
+            <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2.3, 0]} receiveShadow>
                 <planeBufferGeometry attach="geometry" args={[10, 10]} />
-                <shadowMaterial attach="material" transparent opacity={0.5} color="white"/>
+                <shadowMaterial attach="material" transparent opacity={0.5}/>
             </mesh>
         </Canvas>
     )
