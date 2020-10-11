@@ -29,7 +29,7 @@ const Layout = ({ children }) => {
       <div className="wrapper">
         {/* TODO: implement navbar */}
         <Navbar siteTitle={data.site.siteMetadata?.title || `Title`} />
-        <content>{children}</content>
+        <div className="content">{children}</div>
         {/* TODO: implement footer, example here */}
         <Footer />
       </div>

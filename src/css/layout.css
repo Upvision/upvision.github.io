@@ -34,11 +34,12 @@ body {
 .wrapper .navbar {
   flex: 0 0 60px;
 }
-.wrapper content {
+.wrapper .content {
   flex-grow: 1;
   width: 100%;
   overflow: hidden;
 }
 .wrapper .footer {
   flex: 0 0 40px;
+  color: white;
 }
