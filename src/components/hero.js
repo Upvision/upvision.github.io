@@ -16,7 +16,7 @@ function Logo(props) {
     const [active, setActive] = useState(false);
 
     useFrame(state => {
-        group.current.position.y = ((Math.sin(state.clock.getElapsedTime())) / 2)
+        group.current.position.y = ( 0.4 + (Math.sin(state.clock.getElapsedTime())) / 2)
         group.current.rotation.z += 0.01
     });
 
@@ -33,7 +33,7 @@ function Logo(props) {
             onPointerOver = {(e) => setHover(true)}
             onPointerOut = {(e) => setHover(false)}
         >
-            <meshStandardMaterial attach="material" color={hovered? 'lightblue' : 'white'} />
+            <meshLambertMaterial attach="material" color={hovered? 'lightblue' : 'lightgrey'} />
         </mesh>
     )
 }

@@ -23,21 +23,21 @@ body {
   height: 100%;
   width: 100%;
   box-sizing: border-box;
+  overflow: hidden;
 }
 .wrapper {
-  /* height: 100%; */
+  height: 100%;
   width: 100%;
   display: flex;
   flex-flow: column;
   box-sizing: border-box;
 }
-.wrapper .navbar {
+.wrapper .nav {
   flex: 0 0 60px;
 }
 .wrapper .content {
   flex-grow: 1;
   width: 100%;
-  overflow: hidden;
 }
 .wrapper .footer {
   position: absolute;

@@ -1,4 +1,4 @@
-import { Link } from "gatsby"
+import { navigate } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import Grid from "@material-ui/core/Grid"
@@ -12,16 +12,16 @@ const muiTheme = createMuiTheme({
   overrides: {
     MuiSlider: {
       thumb: {
-        height: "14px",
-        width: "14px",
+        height: "12px",
+        width: "12px",
         color: "#13e8b5",
       },
       track: {
-        height: "4px",
+        height: "3px",
         color: "#13a884",
       },
       rail: {
-        height: "4px",
+        height: "3px",
         color: "#13a884",
       },
       markLabel: {
@@ -36,62 +36,57 @@ const muiTheme = createMuiTheme({
   },
 })
 
-function Navbar({ siteTitle }) {
-  const [value, setValue] = React.useState(0)
-
-  React.useEffect(() => {
-    window.addEventListener("scroll", listenToScroll)
-  }, [])
-
-  React.useEffect(() => {
-    if (
-      (window.scrollY / (window.innerHeight + window.outerHeight)) * 100 !==
-      value
-    ) {
-      //do smooth scrolling to (value*(window.innerHeight+window.outerHeight)/100)
-    }
-  }, [value])
-
-  const listenToScroll = () => {
-    let barPercentage =
-      (window.scrollY / (window.innerHeight + window.outerHeight)) * 100
-    setValue(barPercentage)
+const marks = [
+  {
+    value: 0,
+    label: "HOME",
+  },
+  {
+    value: 20,
+    label: "ABOUT US",
+  },
+  {
+    value: 40,
+    label: "CONTACT US",
+  },
+  {
+    value: 60,
+    label: "HOME",
+  },
+  {
+    value: 80,
+    label: "HOME2",
+  },
+  {
+    value: 100,
+    label: "HOME3",
   }
+]
+
+const siteMap = [
+  "/", "/about/", "/404/", "/404/", "/404/", "/404/"
+]
+
+function Navbar({ mark }) {
+  var timeout;
+  const [value, setValue] = React.useState(mark)
 
   const handleChange = (event, newValue) => {
-    setValue(newValue)
+    setValue(newValue);
   }
 
-  const marks = [
-    {
-      value: 0,
-      label: "HOME",
-    },
-    {
-      value: 20,
-      label: "ABOUT US",
-    },
-    {
-      value: 40,
-      label: "CONTACT US",
-    },
-    {
-      value: 60,
-      label: "HOME",
-    },
-    {
-      value: 80,
-      label: "HOME2",
-    },
-    {
-      value: 100,
-      label: "HOME3",
-    },
-  ]
+  const handleCommittedChange = (event, newValue) => {
+    timeout && clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      let index = Math.round(newValue/20);
+      setValue(index*10);
+      navigate(siteMap[Math.max(0, index)]);
+    }, 0)
+  }
 
   return (
     <>
-      <Grid container spacing={3} justify="center">
+      <Grid container spacing={3} justify="center" className="nav">
         <Grid item xs={10} md={8} lg={6}>
           <ThemeProvider theme={muiTheme}>
             <Slider
@@ -99,38 +94,16 @@ function Navbar({ siteTitle }) {
               max={100}
               value={value}
               onChange={handleChange}
+              onChangeCommitted={handleCommittedChange}
               aria-labelledby="continuous-slider"
               marks={marks}
             />
           </ThemeProvider>
         </Grid>
       </Grid>
-      {/* <div className="navbar">
-         <h1 style={{ margin: 0 }}> 
-          <Link
-            to="/"
-            style={{
-              color: `#13e8b5`,
-              textDecoration: `none`,
-            }}
-          >
-             {siteTitle} 
-            <hr 
-              style={{
-                color: `#13e8b5`,
-                height: `4px`,
-                borderRadius: `5px`,
-                backgroundColor: `#13e8b5`,
-                width: `60%`
-              }}
-            ></hr>
-          </Link>
-         </h1> 
-      </div> */}
     </>
   )
 }
-
 Navbar.propTypes = {
   siteTitle: PropTypes.string,
 }
