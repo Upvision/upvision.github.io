@@ -78,9 +78,9 @@ function Navbar({ mark }) {
   const handleCommittedChange = (event, newValue) => {
     timeout && clearTimeout(timeout);
     timeout = setTimeout(() => {
-      let index = Math.round(newValue/10);
+      let index = Math.round(newValue/20);
       setValue(index*10);
-      navigate(siteMap[Math.max(0, index-1)]);
+      navigate(siteMap[Math.max(0, index)]);
     }, 0)
   }
 
