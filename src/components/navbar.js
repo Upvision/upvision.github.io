@@ -64,7 +64,7 @@ const marks = [
 ]
 
 const siteMap = [
-  "/", "/about-us/", "/404/", "/404/", "/404/", "/404/"
+  "/", "/about/", "/404/", "/404/", "/404/", "/404/"
 ]
 
 function Navbar({ mark }) {
