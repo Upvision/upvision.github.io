@@ -80,8 +80,7 @@ function Navbar({ mark }) {
     timeout = setTimeout(() => {
       let index = Math.round(newValue/10);
       setValue(index*10);
-      console.log(siteMap[index-1]);
-      navigate(siteMap[index-1]);
+      navigate(siteMap[Math.max(0, index-1)]);
     }, 0)
   }
 
