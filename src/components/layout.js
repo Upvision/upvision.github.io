@@ -5,12 +5,13 @@ import Navbar from "./navbar"
 import Footer from "./footer"
 import "../css/layout.css"
 
-const Layout = ({ children, mark }) => {
-  
+const Layout = props => {
+  const { children, mark, setMark, path } = props
+  console.log("props: ")
   return (
     <>
       <div className="wrapper">
-        <Navbar mark = {mark}/>
+        <Navbar path={path} />
         <div className="content">{children}</div>
         <Footer />
       </div>

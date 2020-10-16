@@ -25,7 +25,7 @@ const muiTheme = createMuiTheme({
         color: "#13a884",
       },
       markLabel: {
-        fontSize: "calc(0.5rem + 0.5vw)",
+        fontSize: "calc(0.5rem + 0.4vw)",
         color: "#13a884",
       },
       markLabelActive: {
@@ -60,28 +60,61 @@ const marks = [
   {
     value: 100,
     label: "HOME3",
-  }
+  },
 ]
 
-const siteMap = [
-  "/", "/about/", "/404/", "/404/", "/404/", "/404/"
-]
+const siteMap = ["/", "/about/", "/404/", "/404/", "/404/", "/404/"]
 
-function Navbar({ mark }) {
-  var timeout;
-  const [value, setValue] = React.useState(mark)
+function Navbar(props) {
+  const { mark, setMark, path } = props
+  const [value, setValue] = React.useState(0)
+  const [expectedValue, setExpectedValue] = React.useState(0)
 
   const handleChange = (event, newValue) => {
-    setValue(newValue);
+    // setValue(newValue)
+    // const index = Math.floor(newValue / 20)
+    // const finalValue =
+    //   index * 20 + Math.round((newValue - index * 20) / 20) * 20
+    // navigate(siteMap[Math.max(0, index)])
   }
 
+  React.useEffect(() => {
+    const index = siteMap.findIndex(site => site === path)
+    setValue(index * 20)
+    setExpectedValue(index * 20)
+  }, [mark])
+
+  React.useEffect(() => {
+    let currentValue = value
+    let timer = setInterval(function () {
+      if (value === expectedValue) clearInterval(timer)
+      else {
+        if (currentValue < expectedValue) setValue(currentValue++)
+        else if (currentValue > expectedValue) setValue(currentValue--)
+      }
+    }, 7)
+  }, [])
+
   const handleCommittedChange = (event, newValue) => {
-    timeout && clearTimeout(timeout);
-    timeout = setTimeout(() => {
-      let index = Math.round(newValue/20);
-      setValue(index*10);
-      navigate(siteMap[Math.max(0, index)]);
-    }, 0)
+    const index = Math.floor(newValue / 20)
+    const finalValue =
+      index * 20 + Math.round((newValue - index * 20) / 20) * 20
+    if (setMark) setMark(finalValue)
+    let currentValue = value
+    let timer = setInterval(function () {
+      if (value === finalValue) clearInterval(timer)
+      else {
+        if (currentValue < finalValue) setValue(currentValue++)
+        else if (currentValue > finalValue) setValue(currentValue--)
+      }
+    }, 7)
+    navigate(siteMap[Math.max(0, finalValue / 20)])
+    // timeout && clearTimeout(timeout)
+    // timeout = setTimeout(() => {
+    //   let index = Math.round(newValue / 20)
+    //   setValue(index * 10)
+    //
+    // }, 0)
   }
 
   return (
