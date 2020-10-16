@@ -1,14 +1,25 @@
 .about_wrapper{
     color: white; 
-    margin: 40px 60px;
+    text-align: center;
+    width: 80%;
 }
 
 .about_header{
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-    font-size: 50px;
-    margin: 40px 0;
+
+    font-family: 'Rubik', sans-serif;    
+    font-size: 4rem;
+    margin: 2rem; 
 }
 
-.abount_content{
-    line-height: 2px;
+.about_content p{
+
+    font-size: 1.4rem;
+    line-height: 2;
+}
+
+.about_container{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
