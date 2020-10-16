@@ -1,0 +1,25 @@
+.about_wrapper{
+    color: white; 
+    text-align: center;
+    width: 80%;
+}
+
+.about_header{
+
+    font-family: 'Rubik', sans-serif;    
+    font-size: 4rem;
+    margin: 2rem; 
+}
+
+.about_content p{
+
+    font-size: 1.4rem;
+    line-height: 2;
+}
+
+.about_container{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
