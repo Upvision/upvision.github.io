@@ -17,7 +17,10 @@
     "gatsby-plugin-sharp": "^2.6.36",
     "gatsby-source-filesystem": "^2.3.30",
     "gatsby-transformer-sharp": "^2.5.15",
+<<<<<<< HEAD
     "material-ui": "^0.20.2",
+=======
+>>>>>>> 820119695b7d4f2498d77794908d67869f83e7d1
     "global": "^4.4.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
