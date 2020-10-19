@@ -19,7 +19,7 @@ body {
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
   background-image: url("../images/bg.png");
-  border: 5px solid #13E8B5;
+  border: 5px solid #13e8b5;
   height: 100%;
   width: 100%;
   box-sizing: border-box;
@@ -40,7 +40,6 @@ body {
   width: 100%;
 }
 .wrapper .footer {
-  position: absolute;
-  top: calc(100% - 30px);
+  flex: 0 0 10px;
   color: white;
 }
