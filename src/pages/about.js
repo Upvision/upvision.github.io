@@ -18,12 +18,12 @@ const SecondPage = () => (
             college. We,
           </p>
           <ul className="about_things">
-            <li>give students a platform to work together and bestow the
+            <li>Give students a platform to work together and bestow the
             creative mind to turn innovative ideas into reality.</li>
-            <li> teach and
+            <li>Teach and
             inspire students, transfer knowledge, and prepare them for outside
             world.</li>
-            <li>provide students the learning opporunities to self-enhance.</li><li>
+            <li>Provide students the learning opporunities to self-enhance.</li><li>
             are a team that wants to make students learn, share and grow
             themselves in their journey.
             </li>
