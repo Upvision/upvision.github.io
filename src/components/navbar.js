@@ -7,6 +7,7 @@ import { createMuiTheme } from "@material-ui/core/styles"
 import { ThemeProvider } from "@material-ui/styles"
 
 import "../css/navbar.css"
+import { transparent } from "material-ui/styles/colors"
 
 const muiTheme = createMuiTheme({
   overrides: {
@@ -29,9 +30,12 @@ const muiTheme = createMuiTheme({
         color: "#13a884",
       },
       markLabelActive: {
-        fontSize: "calc(0.5rem + 0.5vw)",
-        color: "#13a884",
+        fontSize: "calc(0.5rem + 0.4vw)",
+        color: "#ffffff",
       },
+      mark: {
+        backgroundColor: transparent,
+      }
     },
   },
 })
@@ -71,11 +75,7 @@ function Navbar(props) {
   const [expectedValue, setExpectedValue] = React.useState(0)
 
   const handleChange = (event, newValue) => {
-    // setValue(newValue)
-    // const index = Math.floor(newValue / 20)
-    // const finalValue =
-    //   index * 20 + Math.round((newValue - index * 20) / 20) * 20
-    // navigate(siteMap[Math.max(0, index)])
+    setValue(newValue)
   }
 
   React.useEffect(() => {
@@ -96,25 +96,19 @@ function Navbar(props) {
   }, [])
 
   const handleCommittedChange = (event, newValue) => {
-    const index = Math.floor(newValue / 20)
+    const index = Math.floor(newValue / 20);
     const finalValue =
-      index * 20 + Math.round((newValue - index * 20) / 20) * 20
-    if (setMark) setMark(finalValue)
-    let currentValue = value
+      index * 20 + Math.round((newValue - index * 20) / 20) * 20;
+    if (setMark) setMark(finalValue);
+    let currentValue = value;
     let timer = setInterval(function () {
       if (value === finalValue) clearInterval(timer)
       else {
         if (currentValue < finalValue) setValue(currentValue++)
         else if (currentValue > finalValue) setValue(currentValue--)
       }
-    }, 7)
-    navigate(siteMap[Math.max(0, finalValue / 20)])
-    // timeout && clearTimeout(timeout)
-    // timeout = setTimeout(() => {
-    //   let index = Math.round(newValue / 20)
-    //   setValue(index * 10)
-    //
-    // }, 0)
+    }, 7);
+    navigate(siteMap[Math.max(0, finalValue / 20)]);
   }
 
   return (
@@ -145,4 +139,4 @@ Navbar.defaultProps = {
   siteTitle: ``,
 }
 
-export default Navbar
+export default Navbar;

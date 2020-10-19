@@ -4,9 +4,9 @@
  * See: https://www.gatsbyjs.com/docs/browser-apis/
  */
 
-import "./src/css/global.css"
-import React from "react"
-import Layout from "./src/components/layout"
+import "./src/css/global.css";
+import React from "react";
+import Layout from "./src/components/layout";
 
 require('typeface-rubik');
 

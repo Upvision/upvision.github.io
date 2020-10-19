@@ -8,8 +8,8 @@ import "../css/layout.css"
 import Hero from "./Hero"
 
 const Layout = props => {
-  const { children, mark, setMark, path } = props
-  let shouldDisplayHero = (path == "/");
+  const { children, path } = props;
+  let shouldDisplayHero = (path === '/');
   
   return (
     <>
@@ -27,4 +27,4 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Layout
+export default Layout;

@@ -10,7 +10,7 @@ softShadows({ size: 0.005, frustrum: 2.75 });
 
 function Logo(props) {
     const group = useRef();
-    const { nodes } = useLoader(GLTFLoader, logoModel)
+    const { nodes } = useLoader(GLTFLoader, logoModel);
 
     const [hovered, setHover] = useState(false);
     const [active, setActive] = useState(false);
@@ -67,4 +67,4 @@ function Hero(props) {
     )
 }
 
-export default Hero
+export default Hero;
