@@ -37,9 +37,9 @@ function Logo(props) {
         </mesh>
     )
 }
-function Hero() {
+function Hero(props) {
     return(
-        <Canvas sRGB shadowMap camera={{ fov: 75 }}>
+        <Canvas {...props} shadowMap camera={{ fov: 75 }}>
             <ambientLight intensity={0.2} />
             <pointLight position={[10, 10, 10]} />
             <pointLight position={[-10, -10, -10]} intensity={0.5} />
@@ -63,6 +63,7 @@ function Hero() {
                 <shadowMaterial attach="material" transparent opacity={0.5}/>
             </mesh>
         </Canvas>
+
     )
 }
 

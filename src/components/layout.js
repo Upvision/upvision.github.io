@@ -5,13 +5,17 @@ import Navbar from "./navbar"
 import Footer from "./footer"
 import "../css/layout.css"
 
+import Hero from "./Hero"
+
 const Layout = props => {
   const { children, mark, setMark, path } = props
-  console.log("props: ")
+  let shouldDisplayHero = (path == "/");
+  
   return (
     <>
       <div className="wrapper">
         <Navbar path={path} />
+        <Hero style={shouldDisplayHero? {} : {display: 'none'}}></Hero>
         <div className="content">{children}</div>
         <Footer />
       </div>
