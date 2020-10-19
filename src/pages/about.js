@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import Container from "@material-ui/core/Container"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -8,7 +9,8 @@ import "../css/about.css"
 const SecondPage = () => (
   <>
     <SEO title="Page two" />
-    <div className="about_container">
+    <Container maxWidth="lg">
+      {/* <div className="about_container"> */}
       <div className="about_wrapper">
         <div className="about_header">About Us</div>
         <div className="about_content">
@@ -27,7 +29,8 @@ const SecondPage = () => (
           </p>
         </div>
       </div>
-    </div>
+    </Container>
+    {/* </div> */}
   </>
 )
 
