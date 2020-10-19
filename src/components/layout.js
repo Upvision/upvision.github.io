@@ -5,7 +5,7 @@ import Navbar from "./navbar"
 import Footer from "./footer"
 import "../css/layout.css"
 
-import Hero from "./Hero"
+import Hero from "./hero"
 
 const Layout = props => {
   const { children, path } = props;
