@@ -38,6 +38,9 @@ body {
 .wrapper .content {
   flex-grow: 1;
   width: 100%;
+  overflow-y: scroll;
+  padding-right: 20px;
+  box-sizing: content-box;
 }
 .wrapper .footer {
   flex: 0 0 10px;
