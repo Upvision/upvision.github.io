@@ -1,36 +1,38 @@
 import React from "react"
 import { Link } from "gatsby"
 import Container from "@material-ui/core/Container"
-
-import Layout from "../components/layout"
 import SEO from "../components/seo"
 import "../css/about.css"
 
 const SecondPage = () => (
   <>
     <SEO title="Page two" />
-    <Container maxWidth="lg">
-      {/* <div className="about_container"> */}
+    {/* <Container maxWidth="lg"> */}
+    <div className="about_container">
       <div className="about_wrapper">
         <div className="about_header">About Us</div>
         <div className="about_content">
           <p>
-            UpVision is a Tech-Club of NIT, Delhi an appreciable initiative by
+            UpVision is the Tech-Club of NIT, Delhi an appreciable initiative by
             our seniors to fuel the awareness in the field of Technology in our
-            college. We give students a platform to work together and bestow the
-            creative mind to turn innovative ideas into reality. We teach and
-            inspire students, transfer knowledge, and prepare them for outside
-            world.
+            college. We,
           </p>
-          <p>
-            We provide students the learning opporunities to self-enhance. We
+          <ul className="about_things">
+            <li>give students a platform to work together and bestow the
+            creative mind to turn innovative ideas into reality.</li>
+            <li> teach and
+            inspire students, transfer knowledge, and prepare them for outside
+            world.</li>
+            <li>provide students the learning opporunities to self-enhance.</li><li>
             are a team that wants to make students learn, share and grow
             themselves in their journey.
-          </p>
+            </li>
+          </ul>
+          
         </div>
       </div>
-    </Container>
-    {/* </div> */}
+    {/* </Container> */}
+    </div>
   </>
 )
 
