@@ -1,11 +1,7 @@
-html, body, #___gatsby {
+html, body, #___gatsby, #gatsby-focus-wrapper {
     height: 100%;
 }
 
 body {
     margin: 0px;
-}
-
-#gatsby-focus-wrapper {
-    height: 100%;
 }
