@@ -1,11 +1,3 @@
-.navbar {
-  width: 100%;
-  height: 60px;
-  margin: 0 auto;
-  text-align: center;
-  margin-top: 10px;
-}
-
 h1 {
   display: block;
   margin: 0;
@@ -18,4 +10,9 @@ h1 {
   text-rendering: optimizeLegibility;
   font-size: 2.25rem;
   line-height: 1.1;
+}
+
+#nav{
+  width: 100%;
+  margin: 0px;
 }
