@@ -1,36 +1,12 @@
-html {
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  font: 112.5%/1.45em georgia, serif, sans-serif;
-}
-body {
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: hsla(0, 0%, 0%, 0.8);
-  font-family: georgia, serif;
-  font-weight: normal;
-  word-wrap: break-word;
-  font-kerning: normal;
-  -moz-font-feature-settings: "kern", "liga", "clig", "calt";
-  -ms-font-feature-settings: "kern", "liga", "clig", "calt";
-  -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
-  font-feature-settings: "kern", "liga", "clig", "calt";
-  background-image: url("../images/bg.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  border: 5px solid #13e8b5;
-  height: 100%;
-  width: 100%;
-  box-sizing: border-box;
-  overflow: hidden;
-}
 .wrapper {
   height: 100%;
   width: 100%;
   display: flex;
   flex-flow: column;
   box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .wrapper .nav {
   flex: 0 0 60px;
@@ -52,9 +28,9 @@ body {
   color: white;
 }
 
-.wrapper .hero {
+.hero {
   position: absolute;
-  top: 60px;
+  top: 0;
   left: 0;
   height: 100%;
   width: 100%;
@@ -63,7 +39,7 @@ body {
   visibility: visible;
 }
 
-.wrapper .hero.hide {
+.hero.hide {
   opacity: 0;
   transition: opacity 0.1s ease-in;
 }

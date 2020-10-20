@@ -15,9 +15,11 @@ function Logo(props) {
     const [active, setActive] = useState(false);
 
     useFrame(state => {
-        group.current.position.y = ( 0.4 + (Math.sin(state.clock.getElapsedTime())) / 2)
+        group.current.position.y = ((Math.sin(state.clock.getElapsedTime())) / 2)
         group.current.rotation.z += 0.01
     });
+
+    let scaleVal = window.innerHeight / 18;
 
     return (
         <mesh
@@ -26,7 +28,7 @@ function Logo(props) {
             castShadow
             dispose={null}
             geometry = {nodes.Curve001.geometry}
-            scale = {active ? [46, 46, 46] : [42, 42, 42]}
+            scale = {active ? [scaleVal + 5, scaleVal + 5, scaleVal + 5] : [scaleVal, scaleVal, scaleVal]}
             rotation={[Math.PI / 2, 0, 0]}
             onClick = {(e) => setActive(!active)}
             onPointerOver = {(e) => setHover(true)}
@@ -38,7 +40,7 @@ function Logo(props) {
 }
 function Hero(props) {
     return(
-        <Canvas {...props} shadowMap camera={{ fov: 75 }}>
+        <Canvas shadowMap camera={{ fov: 75 }}>
             <ambientLight intensity={0.2} />
             <pointLight position={[10, 10, 10]} />
             <pointLight position={[-10, -10, -10]} intensity={0.5} />
