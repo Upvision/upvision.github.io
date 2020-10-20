@@ -113,7 +113,7 @@ function Navbar(props) {
 
   return (
     <>
-      <Grid container spacing={3} justify="center" className="nav">
+      <Grid container spacing={3} justify="center" id="nav">
         <Grid item xs={10} md={8} lg={6}>
           <ThemeProvider theme={muiTheme}>
             <Slider

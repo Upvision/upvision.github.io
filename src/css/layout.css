@@ -2,8 +2,6 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   font: 112.5%/1.45em georgia, serif, sans-serif;
-  /* box-sizing: border-box; */
-  /* overflow: hidden; */
 }
 body {
   margin: 0;
@@ -19,6 +17,8 @@ body {
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
   background-image: url("../images/bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
   border: 5px solid #13e8b5;
   height: 100%;
   width: 100%;
@@ -39,9 +39,14 @@ body {
   flex-grow: 1;
   width: 100%;
   overflow-y: scroll;
-  padding-right: 20px;
-  box-sizing: content-box;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
+
+.wrapper .content::-webkit-scrollbar{
+  display: none;
+}
+
 .wrapper .footer {
   flex: 0 0 10px;
   color: white;
