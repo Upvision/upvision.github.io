@@ -51,3 +51,19 @@ body {
   flex: 0 0 10px;
   color: white;
 }
+
+.wrapper .hero {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 1;
+  visibility: visible;
+}
+
+.wrapper .hero.hide {
+  opacity: 0;
+  transition: opacity 0.1s ease-in;
+}

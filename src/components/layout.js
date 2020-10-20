@@ -15,7 +15,9 @@ const Layout = props => {
     <>
       <div className="wrapper">
         <Navbar path={path} />
-        <Hero style={shouldDisplayHero? {} : {display: 'none'}}></Hero>
+        <div className={"hero " + (shouldDisplayHero? '' : 'hide')}>
+          <Hero></Hero>
+        </div>
         <div className="content">{children}</div>
         <Footer />
       </div>

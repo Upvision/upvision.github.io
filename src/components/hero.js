@@ -4,7 +4,6 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { softShadows } from 'drei';
 
 import logoModel from "../assets/logo.glb";
-import "../css/hero.css";
 
 softShadows({ size: 0.005, frustrum: 2.75 });
 
