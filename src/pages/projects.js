@@ -65,6 +65,7 @@ const ProjectsPage = () => {
       ],
     },
   ]
+
   return (
     <>
       <div className="body-container">
