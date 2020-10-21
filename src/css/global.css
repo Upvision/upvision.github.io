@@ -1,4 +1,4 @@
-html, body, #___gatsby {
+html, body, #___gatsby, #gatsby-focus-wrapper {
     height: 100%;
 }
 
@@ -6,6 +6,37 @@ body {
     margin: 0px;
 }
 
-#gatsby-focus-wrapper {
+#scrollDom {
+    overflow: auto;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+}
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font: 112.5%/1.45em georgia, serif, sans-serif;
+}
+
+body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: hsla(0, 0%, 0%, 0.8);
+    font-family: georgia, serif;
+    font-weight: normal;
+    word-wrap: break-word;
+    font-kerning: normal;
+    -moz-font-feature-settings: "kern", "liga", "clig", "calt";
+    -ms-font-feature-settings: "kern", "liga", "clig", "calt";
+    -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
+    font-feature-settings: "kern", "liga", "clig", "calt";
+    background-image: url("../images/bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 5px solid #13e8b5;
     height: 100%;
+    width: 100%;
+    box-sizing: border-box;
 }
