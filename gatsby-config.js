@@ -49,6 +49,15 @@ module.exports = {
                       }
                     }
                     openGraphImageUrl
+                    collaborators(affiliation: DIRECT) {
+                      edges {
+                        node {
+                          name
+                          url
+                          avatarUrl
+                        }
+                      }
+                    }
                   }
                 }
               }

@@ -7,69 +7,7 @@ import Grid from "@material-ui/core/Grid"
 import { graphql } from 'gatsby'
 
 const ProjectsPage = ({data}) => {
-  // const projectCards = [
-  //   {
-  //     title: "Project_Name_420_69",
-  //     imageURL:
-  //       "https://images.pexels.com/photos/2529973/pexels-photo-2529973.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-  //     description: `Lorem ipsum dolor sit amet,
-  //     consectetur adipisicing elit. Adipisci animi assumenda cumque
-  //     deserunt dolorum ex exercitationem. Lorem ipsum dolor sit amet,
-  //     consectetur adipisicing elit. Adipisci animi assumenda cumque
-  //     deserunt dolorum ex exercitationem. Adipisci animi assumenda cumque
-  //     deserunt dolorum ex exercitationem.`,
-  //     repoLink: "https://www.google.com",
-  //     contributers: [
-  //       {
-  //         altTag: "Beeta Samad",
-  //         imageURL:
-  //           "https://avatars2.githubusercontent.com/u/47863077?s=460&u=43a95d2f72a3d7e46a413fa5621a717659d24aa9&v=4",
-  //         profileLink: "https://www.google.com",
-  //       },
-  //       {
-  //         altTag: "Beeta Samad",
-  //         imageURL:
-  //           "https://avatars2.githubusercontent.com/u/47863077?s=460&u=43a95d2f72a3d7e46a413fa5621a717659d24aa9&v=4",
-  //         profileLink: "https://www.google.com",
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     title: "Project_TITLE_69696969",
-  //     imageURL:
-  //       "https://images.pexels.com/photos/2529973/pexels-photo-2529973.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-  //     description: `Lorem ipsum dolor sit amet,
-  //       consectetur adipisicing elit. Adipisci animi assumenda cumque
-  //       deserunt dolorum ex exercitationem. Lorem ipsum dolor sit amet,
-  //       consectetur adipisicing elit. Adipisci animi assumenda cumque
-  //       deserunt dolorum ex exercitationem. Adipisci animi assumenda cumque
-  //       deserunt dolorum ex exercitationem.`,
-  //     repoLink: "https://www.google.com",
-  //     contributers: [
-  //       {
-  //         altTag: "Beeta Samad",
-  //         imageURL:
-  //           "https://avatars2.githubusercontent.com/u/47863077?s=460&u=43a95d2f72a3d7e46a413fa5621a717659d24aa9&v=4",
-  //         profileLink: "https://www.google.com",
-  //       },
-  //       {
-  //         altTag: "Beeta Samad",
-  //         imageURL:
-  //           "https://avatars2.githubusercontent.com/u/47863077?s=460&u=43a95d2f72a3d7e46a413fa5621a717659d24aa9&v=4",
-  //         profileLink: "https://www.google.com",
-  //       },
-  //       {
-  //         altTag: "Beeta Samad",
-  //         imageURL:
-  //           "https://avatars2.githubusercontent.com/u/47863077?s=460&u=43a95d2f72a3d7e46a413fa5621a717659d24aa9&v=4",
-  //         profileLink: "https://www.google.com",
-  //       },
-  //     ],
-  //   },
-  // ]
-
   const projectCards = data.githubData.data.organization.repositories.edges
-
   return (
     <>
       <div className="body-container">
@@ -80,14 +18,14 @@ const ProjectsPage = ({data}) => {
         <Grid container spacing={3}>
           {projectCards.map(edge => {
             let projectCard = edge.node;
-            // const options = {
-            //   url: `https://api.github.com/repos/UpVision/{projectCard.name}/contributors` ,
-            //   'json': true ,
-            //   headers: { 
-            //       'User-Agent':'request'
-            //   }
-            // };
-
+            // let url = `https://api.github.com/repos/UpVision/${projectCard.name}/contributors`;
+            let contributors = projectCard.collaborators.edges.map(edge => {
+              return {
+                altTag: edge.node.name,
+                imageURL: edge.node.avatarUrl,
+                profileLink: edge.node.url
+              }
+            })
             return (
               <Grid item xs={12} sm={6} lg={4}>
                 <ProjectCard
@@ -95,19 +33,7 @@ const ProjectsPage = ({data}) => {
                   imageURL={projectCard.imageURL ||  "https://images.pexels.com/photos/2529973/pexels-photo-2529973.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"}
                   description={projectCard.description || "No description found"}
                   repoLink={projectCard.projectsUrl}
-                  contributers={projectCard.contributers || [
-                    {
-                      altTag: "Beeta Samad",
-                      imageURL:
-                        "https://avatars2.githubusercontent.com/u/47863077?s=460&u=43a95d2f72a3d7e46a413fa5621a717659d24aa9&v=4",
-                      profileLink: "https://www.google.com",
-                    },{
-                      altTag: "Beeta Samad",
-                      imageURL:
-                        "https://avatars2.githubusercontent.com/u/47863077?s=460&u=43a95d2f72a3d7e46a413fa5621a717659d24aa9&v=4",
-                      profileLink: "https://www.google.com",
-                    }]
-                  }
+                  contributers={contributors}
                 />
               </Grid>
             )
@@ -133,7 +59,16 @@ export const query = graphql`
                 readme {
                   text
                 },
-                openGraphImageUrl
+                openGraphImageUrl,
+                collaborators {
+                  edges {
+                    node {
+                      name
+                      url
+                      avatarUrl
+                    }
+                  }
+                }
               }
             }
           }
