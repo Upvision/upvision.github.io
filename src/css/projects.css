@@ -19,22 +19,11 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
+  border: 1px solid grey;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   margin: 5px;
 }
 
-body {
-  font-family: "Poppins";
-  overflow: hidden;
-}
-
-/* .container {
-  width: 100%;
-  height: 100vh;
-  background-color: #232323;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
 .container .post {
   border-radius: 3px;
   box-shadow: 5px 5px 2.5px #124a3d;
@@ -49,14 +38,14 @@ body {
   margin-top: -20px;
 }
 .container .post:hover .body_post {
-  height: 90%;
+  height: 60%;
 }
 .container .post:hover .main-img {
   transform: translatey(-10px) translatex(-5px) scale(1.05);
 }
 .container .post .header_post {
   width: 100%;
-  height: 40%;
+  height: 50%;
   background: #ddd;
   position: absolute;
   top: 0;
@@ -73,7 +62,7 @@ body {
 }
 .container .post .body_post {
   width: 100%;
-  height: 60%;
+  height: 50%;
   background-image: linear-gradient(
     to bottom right,
     rgb(197, 235, 216),
@@ -94,15 +83,28 @@ body {
   width: 80%;
   height: 80%;
   position: relative;
+  margin-top: 2rem;
 }
 .container .post .body_post .post_content h1 {
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 26px;
+  letter-spacing: 2px;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding-bottom: 0.5rem;
 }
 .container .post .body_post .post_content p {
   font-size: 14px;
   font-weight: normal;
+  overflow: hidden;
 }
+
+.post_content hr {
+  color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 1px;
+  margin: 5px 0;
+}
+
 .container .post .body_post .post_content .container_infos {
   width: 100%;
   display: flex;
@@ -208,6 +210,18 @@ body {
   -ms-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
   -o-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
   transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+}
+
+.container .card_repoUrl {
+  text-decoration: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+}
+
+.container .card_repoUrl a {
+  float: right;
 }
 .container
   .post
