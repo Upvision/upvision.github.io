@@ -35,7 +35,7 @@ const muiTheme = createMuiTheme({
       },
       mark: {
         backgroundColor: transparent,
-      }
+      },
     },
   },
 })
@@ -51,11 +51,11 @@ const marks = [
   },
   {
     value: 40,
-    label: "CONTACT US",
+    label: "PROJECTS",
   },
   {
     value: 60,
-    label: "HOME",
+    label: "CONTACT US",
   },
   {
     value: 80,
@@ -67,7 +67,7 @@ const marks = [
   },
 ]
 
-const siteMap = ["/", "/about/", "/404/", "/404/", "/404/", "/404/"]
+const siteMap = ["/", "/about/", "/projects/", "/404/", "/404/", "/404/"]
 
 function Navbar(props) {
   const { mark, setMark, path } = props
@@ -96,23 +96,25 @@ function Navbar(props) {
   }, [])
 
   const handleCommittedChange = (event, newValue) => {
-    const index = Math.floor(newValue / 20);
+    const index = Math.floor(newValue / 20)
     const finalValue =
-      index * 20 + Math.round((newValue - index * 20) / 20) * 20;
-    if (setMark) setMark(finalValue);
-    let currentValue = value;
+      index * 20 + Math.round((newValue - index * 20) / 20) * 20
+    if (setMark) setMark(finalValue)
+    let currentValue = value
     let timer = setInterval(function () {
       if (value === finalValue) clearInterval(timer)
       else {
         if (currentValue < finalValue) setValue(currentValue++)
         else if (currentValue > finalValue) setValue(currentValue--)
       }
-    }, 7);
-    navigate(siteMap[Math.max(0, finalValue / 20)]);
+    }, 7)
+    navigate(siteMap[Math.max(0, finalValue / 20)])
   }
 
-  React.useEffect( () => {
-    window.addEventListener('scroll', (event) => {console.log(event)});
+  React.useEffect(() => {
+    window.addEventListener("scroll", event => {
+      console.log(event)
+    })
   })
 
   return (
@@ -143,4 +145,4 @@ Navbar.defaultProps = {
   siteTitle: ``,
 }
 
-export default Navbar;
+export default Navbar
