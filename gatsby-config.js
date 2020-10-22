@@ -39,7 +39,7 @@ module.exports = {
                   node {
                     name
                     description
-                    projectsUrl
+                    url
                     stargazers {
                       totalCount
                     }

@@ -19,7 +19,7 @@ function ProjectCard(props) {
                 <small>Contributers: </small>
                 {contributers.map(contributer => {
                   return (
-                    <a href={contributer.profileLink} target="_blank" rel>
+                    <a href={contributer.profileLink} rel="noreferrer" target="_blank">
                       <img
                         src={contributer.imageURL}
                         alt={contributer.altTag}
@@ -36,7 +36,7 @@ function ProjectCard(props) {
               </p>
             </div>
             <div className="card_repoUrl">
-              <a href={repoLink}><img src={arrow} alt="Repository..." width="69"/></a>
+              <a href={repoLink} rel="noreferrer" target="_blank"><img src={arrow} alt="Repository..." width="69"/></a>
             </div>
           </div>
         </div>
