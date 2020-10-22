@@ -7,7 +7,7 @@
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "drei": "^1.5.7",
-    "gatsby": "^2.24.63",
+    "gatsby": "^2.24.85",
     "gatsby-cli": "^2.12.107",
     "gatsby-image": "^2.4.19",
     "gatsby-material-ui-components": "^1.0.3",
@@ -17,9 +17,10 @@
     "gatsby-plugin-react-helmet": "^3.3.11",
     "gatsby-plugin-sharp": "^2.6.36",
     "gatsby-source-filesystem": "^2.3.30",
+    "gatsby-source-github-api": "^0.2.1",
     "gatsby-transformer-sharp": "^2.5.15",
-    "material-ui": "^0.20.2",
     "global": "^4.4.0",
+    "material-ui": "^0.20.2",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.12.0",
@@ -28,6 +29,7 @@
     "three": "^0.121.1"
   },
   "devDependencies": {
+    "env-cmd": "^10.1.0",
     "prettier": "2.1.1",
     "typeface-rubik": "^1.1.13"
   },
@@ -36,13 +38,13 @@
   ],
   "license": "0BSD",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "build": "env-cmd gatsby build",
+    "develop": "env-cmd gatsby develop",
+    "format": "env-cmd prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "env-cmd npm run develop",
+    "serve": "env-cmd gatsby serve",
+    "clean": "env-cmd gatsby clean",
+    "test": "env-cmd echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "repository": {
     "type": "git",

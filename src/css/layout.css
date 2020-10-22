@@ -19,7 +19,7 @@
   scrollbar-width: none;
 }
 
-.wrapper .content::-webkit-scrollbar{
+.wrapper .content::-webkit-scrollbar {
   display: none;
 }
 
@@ -29,7 +29,6 @@
 }
 
 .hero {
-  position: absolute;
   top: 0;
   left: 0;
   height: 100%;
