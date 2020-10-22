@@ -18,3 +18,5 @@ jobs:
         with:
           access-token: ${{ secrets.ACCESS_TOKEN }}
           deploy-branch: release
+        env:
+          GHTOKEN: ${{ secrets.ACCESS_TOKEN }}
