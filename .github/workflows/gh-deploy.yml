@@ -13,10 +13,13 @@ jobs:
         name: Checkout
         uses: actions/checkout@v2
       -
+        name: Make envfile
+        uses: SpicyPizza/create-envfile@v1
+        with:
+          GHTOKEN: ${{ secrets.ACCESS_TOKEN }} 
+      -
         name: Build project
         uses: enriikke/gatsby-gh-pages-action@v2
         with:
           access-token: ${{ secrets.ACCESS_TOKEN }}
           deploy-branch: release
-        env:
-          GHTOKEN: ${{ secrets.ACCESS_TOKEN }}
