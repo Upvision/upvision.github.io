@@ -43,11 +43,6 @@ module.exports = {
                     stargazers {
                       totalCount
                     }
-                    readme: object(expression:"master:README.md"){
-                      ... on Blob{
-                        text
-                      }
-                    }
                     openGraphImageUrl
                     collaborators(affiliation: DIRECT) {
                       edges {

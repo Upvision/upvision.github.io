@@ -56,9 +56,6 @@ export const query = graphql`
                 name,
                 description,
                 projectsUrl,
-                readme {
-                  text
-                },
                 openGraphImageUrl,
                 collaborators {
                   edges {
