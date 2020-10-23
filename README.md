@@ -35,8 +35,18 @@ Contribution access has also been given to the web-dev team, ([@Upvision/web-dev
     npm install -g gatsby-cli
     ```
 
+2.  **Configuration.**
 
-2.  **Start developing.**
+    Since, data is pulled live from github, you need to setup an api key.
+    - get a [personal access token from github](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line).
+    - create a new file `.env` and save your token:
+
+    ```
+    GHTOKEN=very-long-unreadable-string-goes-here
+    ```
+
+
+3.  **Start developing.**
 
     Ideally you should fork the repository first, click the fork button at the top right corner.
     
@@ -48,7 +58,7 @@ Contribution access has also been given to the web-dev team, ([@Upvision/web-dev
     gh repo fork Upvision/upvision.github.io --clone=true
     ```
 
-3.  **Open the source code and start editing!**
+4.  **Open the source code and start editing!**
 
     To serve the website locally,
 
