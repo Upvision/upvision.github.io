@@ -16,7 +16,7 @@ jobs:
         name: Make envfile
         uses: SpicyPizza/create-envfile@v1
         with:
-          GHTOKEN: ${{ secrets.ACCESS_TOKEN }} 
+          envkey_GHTOKEN: ${{ secrets.ACCESS_TOKEN }} 
       -
         name: Build project
         uses: enriikke/gatsby-gh-pages-action@v2
