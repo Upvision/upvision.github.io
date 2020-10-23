@@ -65,8 +65,8 @@
   height: 50%;
   background-image: linear-gradient(
     to bottom right,
-    rgb(197, 235, 216),
-    rgb(19, 168, 132)
+    #c5ebd8,
+    #13a884
   );
   position: absolute;
   bottom: 0;
