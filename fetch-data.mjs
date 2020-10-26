@@ -57,7 +57,11 @@ await Promise.all(data.organization.repositories.edges.map(async (edge) => {
     });
 }));
 
-fs.writeFile('./data/githubData.json', JSON.stringify(data, null, 2), err => {
+let finalData = data.organization.repositories.edges.map(edge => {
+    return edge.node;
+});
+
+fs.writeFile('./data/githubData.json', JSON.stringify(finalData, null, 2), err => {
     if (err) throw err;
     console.log("Data written, succesfully!");
 })
