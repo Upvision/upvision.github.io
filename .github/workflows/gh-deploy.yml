@@ -12,6 +12,11 @@ jobs:
       -
         name: Checkout
         uses: actions/checkout@v2
+      -
+        name: Make envfile
+        uses: SpicyPizza/create-envfile@v1
+        with:
+          envkey_GHTOKEN: ${{ secrets.ACCESS_TOKEN }} 
       - 
         name: Setup-node
         uses: actions/setup-node@v2-beta
@@ -29,11 +34,6 @@ jobs:
           message: 'Latest github data update for ${{ env.GITHUB_RUN_ID }}'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      -
-        name: Make envfile
-        uses: SpicyPizza/create-envfile@v1
-        with:
-          envkey_GHTOKEN: ${{ secrets.ACCESS_TOKEN }} 
       -
         name: Build project
         uses: enriikke/gatsby-gh-pages-action@v2
