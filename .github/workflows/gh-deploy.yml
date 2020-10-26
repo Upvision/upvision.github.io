@@ -12,6 +12,23 @@ jobs:
       -
         name: Checkout
         uses: actions/checkout@v2
+      - 
+        name: Setup-node
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: '14'
+      -
+        run: |
+          npm i axios
+          npm run fetch
+      -
+        name: Commit latest github data
+        uses: EndBug/add-and-commit@v5
+        with: 
+          add: 'data'
+          message: 'Latest github data update for ${{ env.GITHUB_RUN_ID }}'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       -
         name: Make envfile
         uses: SpicyPizza/create-envfile@v1
@@ -23,3 +40,4 @@ jobs:
         with:
           access-token: ${{ secrets.ACCESS_TOKEN }}
           deploy-branch: release
+      
