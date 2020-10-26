@@ -18,14 +18,7 @@ const ProjectsPage = ({data}) => {
         <Grid container spacing={3}>
           {projectCards.map(edge => {
             let projectCard = edge.node;
-            // let url = `https://api.github.com/repos/UpVision/${projectCard.name}/contributors`;
-            let contributors = projectCard.collaborators.edges.map(edge => {
-              return {
-                altTag: edge.node.name,
-                imageURL: edge.node.avatarUrl,
-                profileLink: edge.node.url
-              }
-            })
+            
             return (
               <Grid item xs={12} sm={6} lg={4}>
                 <ProjectCard
@@ -33,7 +26,7 @@ const ProjectsPage = ({data}) => {
                   imageURL={projectCard.imageURL ||  "https://images.pexels.com/photos/2529973/pexels-photo-2529973.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"}
                   description={projectCard.description || "No description found"}
                   repoLink={projectCard.url}
-                  contributers={contributors}
+                  contributers={projectCard.contributors}
                 />
               </Grid>
             )

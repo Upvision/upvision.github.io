@@ -1,0 +1,192 @@
+{
+  "organization": {
+    "repositories": {
+      "edges": [
+        {
+          "node": {
+            "name": "upvision.github.io",
+            "description": "Website available at https://upvision.github.io/",
+            "url": "https://github.com/Upvision/upvision.github.io",
+            "stargazers": {
+              "totalCount": 1
+            },
+            "openGraphImageUrl": "https://avatars3.githubusercontent.com/u/70439629?s=400&v=4",
+            "contributors": [
+              {
+                "profileLink": "https://api.github.com/users/Blakeinstein",
+                "imageURL": "https://avatars0.githubusercontent.com/u/42214598?v=4",
+                "altTag": "Blakeinstein"
+              },
+              {
+                "profileLink": "https://api.github.com/users/Navneet-Singh-123",
+                "imageURL": "https://avatars3.githubusercontent.com/u/53988436?v=4",
+                "altTag": "Navneet-Singh-123"
+              },
+              {
+                "profileLink": "https://api.github.com/users/DumbSkull",
+                "imageURL": "https://avatars1.githubusercontent.com/u/47863077?v=4",
+                "altTag": "DumbSkull"
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "name": "Django-NITD",
+            "description": null,
+            "url": "https://github.com/Upvision/Django-NITD",
+            "stargazers": {
+              "totalCount": 0
+            },
+            "openGraphImageUrl": "https://avatars3.githubusercontent.com/u/70439629?s=400&v=4",
+            "contributors": [
+              {
+                "profileLink": "https://api.github.com/users/saksham1991999",
+                "imageURL": "https://avatars0.githubusercontent.com/u/42737778?v=4",
+                "altTag": "saksham1991999"
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "name": "Saptrang-2020-2",
+            "description": null,
+            "url": "https://github.com/Upvision/Saptrang-2020-2",
+            "stargazers": {
+              "totalCount": 0
+            },
+            "openGraphImageUrl": "https://avatars3.githubusercontent.com/u/70439629?s=400&v=4",
+            "contributors": [
+              {
+                "profileLink": "https://api.github.com/users/saksham1991999",
+                "imageURL": "https://avatars0.githubusercontent.com/u/42737778?v=4",
+                "altTag": "saksham1991999"
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "name": "Saptrang-2020",
+            "description": null,
+            "url": "https://github.com/Upvision/Saptrang-2020",
+            "stargazers": {
+              "totalCount": 0
+            },
+            "openGraphImageUrl": "https://avatars3.githubusercontent.com/u/70439629?s=400&v=4",
+            "contributors": [
+              {
+                "profileLink": "https://api.github.com/users/Blakeinstein",
+                "imageURL": "https://avatars0.githubusercontent.com/u/42214598?v=4",
+                "altTag": "Blakeinstein"
+              },
+              {
+                "profileLink": "https://api.github.com/users/saksham1991999",
+                "imageURL": "https://avatars0.githubusercontent.com/u/42737778?v=4",
+                "altTag": "saksham1991999"
+              },
+              {
+                "profileLink": "https://api.github.com/users/aakashverma12",
+                "imageURL": "https://avatars3.githubusercontent.com/u/12710125?v=4",
+                "altTag": "aakashverma12"
+              },
+              {
+                "profileLink": "https://api.github.com/users/mahajanayush77",
+                "imageURL": "https://avatars3.githubusercontent.com/u/56269313?v=4",
+                "altTag": "mahajanayush77"
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "name": "Sentience",
+            "description": "Website for Sentience NITD 2019",
+            "url": "https://github.com/Upvision/Sentience",
+            "stargazers": {
+              "totalCount": 0
+            },
+            "openGraphImageUrl": "https://avatars3.githubusercontent.com/u/70439629?s=400&v=4",
+            "contributors": [
+              {
+                "profileLink": "https://api.github.com/users/Boot-Error",
+                "imageURL": "https://avatars3.githubusercontent.com/u/8546140?v=4",
+                "altTag": "Boot-Error"
+              },
+              {
+                "profileLink": "https://api.github.com/users/dSecret",
+                "imageURL": "https://avatars0.githubusercontent.com/u/29232347?v=4",
+                "altTag": "dSecret"
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "name": "TerraTechnica2k18",
+            "description": "Official Website of Upcoming Tech Fest 'TERRA TECHNICA 2k18'",
+            "url": "https://github.com/Upvision/TerraTechnica2k18",
+            "stargazers": {
+              "totalCount": 0
+            },
+            "openGraphImageUrl": "https://avatars3.githubusercontent.com/u/70439629?s=400&v=4",
+            "contributors": [
+              {
+                "profileLink": "https://api.github.com/users/dSecret",
+                "imageURL": "https://avatars0.githubusercontent.com/u/29232347?v=4",
+                "altTag": "dSecret"
+              },
+              {
+                "profileLink": "https://api.github.com/users/Boot-Error",
+                "imageURL": "https://avatars3.githubusercontent.com/u/8546140?v=4",
+                "altTag": "Boot-Error"
+              },
+              {
+                "profileLink": "https://api.github.com/users/AkhzarFarhan",
+                "imageURL": "https://avatars0.githubusercontent.com/u/21042028?v=4",
+                "altTag": "AkhzarFarhan"
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "name": "zeal19",
+            "description": "Official website of sports fest of NIT Delhi - ZEAL'19 using ReactJs",
+            "url": "https://github.com/Upvision/zeal19",
+            "stargazers": {
+              "totalCount": 0
+            },
+            "openGraphImageUrl": "https://avatars3.githubusercontent.com/u/70439629?s=400&v=4",
+            "contributors": [
+              {
+                "profileLink": "https://api.github.com/users/dSecret",
+                "imageURL": "https://avatars0.githubusercontent.com/u/29232347?v=4",
+                "altTag": "dSecret"
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "name": "zeal",
+            "description": "\"Official website for Zeal'18\"",
+            "url": "https://github.com/Upvision/zeal",
+            "stargazers": {
+              "totalCount": 0
+            },
+            "openGraphImageUrl": "https://avatars3.githubusercontent.com/u/70439629?s=400&v=4",
+            "contributors": [
+              {
+                "profileLink": "https://api.github.com/users/dSecret",
+                "imageURL": "https://avatars0.githubusercontent.com/u/29232347?v=4",
+                "altTag": "dSecret"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
