@@ -21,7 +21,7 @@ const ProjectsPage = () => {
               <Grid item xs={12} sm={6} lg={4}>
                 <ProjectCard
                   title={projectCard.name || "Error finding name"}
-                  imageURL={projectCard.imageURL ||  "https://images.pexels.com/photos/2529973/pexels-photo-2529973.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"}
+                  imageURL={projectCard.openGraphImageUrl}
                   description={projectCard.description || "No description found"}
                   repoLink={projectCard.url}
                   contributers={projectCard.contributors}

@@ -3,13 +3,14 @@ import arrow from "../images/arrow.svg"
 
 function ProjectCard(props) {
   const { title, description, repoLink, imageURL, contributers } = props
-
+  console.log(typeof(imageURL))
+  let image = imageURL.startsWith("https://repository-images")? imageURL : "https://images.pexels.com/photos/2529973/pexels-photo-2529973.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
   return (
     <div>
       <div className="container">
         <div className="post">
           <div className="header_post">
-            <img src={imageURL} alt="" className="main-img" />
+            <img src={image} alt={title} className="main-img" />
           </div>
 
           <div className="body_post">
