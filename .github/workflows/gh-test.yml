@@ -19,3 +19,4 @@ jobs:
         name: Test build project
         run: |
           npm install
+          npm run build

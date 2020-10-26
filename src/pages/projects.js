@@ -5,9 +5,9 @@ import ProjectCard from "../components/projectCard"
 import Grid from "@material-ui/core/Grid"
 
 import { graphql } from 'gatsby'
+import data from '../../data/githubData.json'
 
-const ProjectsPage = ({data}) => {
-  const projectCards = data.githubData.data.organization.repositories.edges
+const ProjectsPage = () => {
   return (
     <>
       <div className="body-container">
@@ -16,24 +16,15 @@ const ProjectsPage = ({data}) => {
         <div className="projects-header">Projects</div>
         <br />
         <Grid container spacing={3}>
-          {projectCards.map(edge => {
-            let projectCard = edge.node;
-            // let url = `https://api.github.com/repos/UpVision/${projectCard.name}/contributors`;
-            let contributors = projectCard.collaborators.edges.map(edge => {
-              return {
-                altTag: edge.node.name,
-                imageURL: edge.node.avatarUrl,
-                profileLink: edge.node.url
-              }
-            })
+          {data.map(projectCard => {
             return (
               <Grid item xs={12} sm={6} lg={4}>
                 <ProjectCard
                   title={projectCard.name || "Error finding name"}
-                  imageURL={projectCard.imageURL ||  "https://images.pexels.com/photos/2529973/pexels-photo-2529973.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"}
+                  imageURL={projectCard.openGraphImageUrl}
                   description={projectCard.description || "No description found"}
                   repoLink={projectCard.url}
-                  contributers={contributors}
+                  contributers={projectCard.contributors}
                 />
               </Grid>
             )
@@ -43,34 +34,4 @@ const ProjectsPage = ({data}) => {
     </>
   )
 }
-export default ProjectsPage
-
-export const query = graphql`
-  query onGithub {
-    githubData {
-      data {
-        organization {
-          repositories {
-            edges {
-              node {
-                name,
-                description,
-                url,
-                openGraphImageUrl,
-                collaborators {
-                  edges {
-                    node {
-                      name
-                      url
-                      avatarUrl
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`
+export default ProjectsPage;

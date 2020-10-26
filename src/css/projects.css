@@ -54,10 +54,12 @@
   -ms-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
   -o-transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
   transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 .container .post .header_post .main-img {
-  max-width: 100%;
-  height: auto;
+  min-height: 100%;
   transition: ease-in-out 600ms;
 }
 .container .post .body_post {
