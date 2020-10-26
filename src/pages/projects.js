@@ -5,9 +5,9 @@ import ProjectCard from "../components/projectCard"
 import Grid from "@material-ui/core/Grid"
 
 import { graphql } from 'gatsby'
+import data from '../../data/githubData.json'
 
-const ProjectsPage = ({data}) => {
-  const projectCards = data.githubData.data.organization.repositories.edges
+const ProjectsPage = () => {
   return (
     <>
       <div className="body-container">
@@ -16,9 +16,7 @@ const ProjectsPage = ({data}) => {
         <div className="projects-header">Projects</div>
         <br />
         <Grid container spacing={3}>
-          {projectCards.map(edge => {
-            let projectCard = edge.node;
-            
+          {data.map(projectCard => {
             return (
               <Grid item xs={12} sm={6} lg={4}>
                 <ProjectCard
@@ -36,34 +34,4 @@ const ProjectsPage = ({data}) => {
     </>
   )
 }
-export default ProjectsPage
-
-export const query = graphql`
-  query onGithub {
-    githubData {
-      data {
-        organization {
-          repositories {
-            edges {
-              node {
-                name,
-                description,
-                url,
-                openGraphImageUrl,
-                collaborators {
-                  edges {
-                    node {
-                      name
-                      url
-                      avatarUrl
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`
+export default ProjectsPage;

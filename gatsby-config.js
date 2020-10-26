@@ -27,48 +27,56 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    `gatsby-transformer-json`,
     {
-      resolve: `gatsby-source-github-api`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        token: process.env.GHTOKEN,
-        graphQLQuery: `
-          query {
-            organization(login:"UpVision") {
-              repositories(first: 10, orderBy: {field: STARGAZERS, direction: DESC}) {
-                edges {
-                  node {
-                    name
-                    description
-                    url
-                    stargazers {
-                      totalCount
-                    }
-                    openGraphImageUrl
-                    collaborators(affiliation: DIRECT) {
-                      edges {
-                        node {
-                          name
-                          url
-                          avatarUrl
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-              membersWithRole(first: 100) {
-                edges {
-                  node {
-                    name
-                    avatarUrl
-                  }
-                }
-              }
-            }
-          }
-        `
+        name: `data`,
+        path: `${__dirname}/data/`
       }
     }
+    // {
+    //   resolve: `gatsby-source-github-api`,
+    //   options: {
+    //     token: process.env.GHTOKEN,
+    //     graphQLQuery: `
+    //       query {
+    //         organization(login:"UpVision") {
+    //           repositories(first: 10, orderBy: {field: STARGAZERS, direction: DESC}) {
+    //             edges {
+    //               node {
+    //                 name
+    //                 description
+    //                 url
+    //                 stargazers {
+    //                   totalCount
+    //                 }
+    //                 openGraphImageUrl
+    //                 collaborators(affiliation: DIRECT) {
+    //                   edges {
+    //                     node {
+    //                       name
+    //                       url
+    //                       avatarUrl
+    //                     }
+    //                   }
+    //                 }
+    //               }
+    //             }
+    //           }
+    //           membersWithRole(first: 100) {
+    //             edges {
+    //               node {
+    //                 name
+    //                 avatarUrl
+    //               }
+    //             }
+    //           }
+    //         }
+    //       }
+    //     `
+    //   }
+    // }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
