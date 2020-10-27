@@ -67,7 +67,7 @@ const marks = [
   },
 ]
 
-const siteMap = ["/", "/about/", "/projects/", "/404/", "/404/", "/404/"]
+const siteMap = ["/", "/about/", "/projects/", "/contactus/", "/404/", "/404/"]
 
 function Navbar(props) {
   const { mark, setMark, path } = props

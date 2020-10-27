@@ -1,0 +1,41 @@
+.contact_container{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact_wrapper{
+    color: white;
+}
+
+.contact_header{
+    font-family: "Rubik", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 3rem;
+    line-height: 1;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.form_label{
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+    font-size: 1.3rem;
+    letter-spacing: 3px;
+}   
+
+@media screen and (max-width: 1300px){
+    .contact_header{
+        text-align: center;
+        font-size: 2.5rem;
+    }
+    .contact_content{
+        max-width: 80%;
+        margin: auto auto
+    }
+    .contact_button{
+        text-align: center;
+    }
+}
