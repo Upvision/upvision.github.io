@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
     "drei": "^1.5.7",
     "gatsby": "^2.24.85",
     "gatsby-cli": "^2.12.107",
