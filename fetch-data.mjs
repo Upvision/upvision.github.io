@@ -68,7 +68,7 @@ fs.writeFile('./data/githubData.json', JSON.stringify(finalData, null, 2), err =
 })
 
 // ! Google calendar Data
-const googleAuth = process.env.googleAuth
+const googleAuth = process.env.GCAUTH
 const calendarId = "rishi1998@gmail.com"
 
 let now = new Date();
