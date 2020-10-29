@@ -2,9 +2,9 @@ import React from "react";
 import SEO from "../components/seo";
 import "../css/about.css";
 
-const SecondPage = () => (
+const AboutUs = () => (
   <>
-    <SEO title="Page two" />
+    <SEO title="About Us" />
     <div className="about_container">
       <div className="about_wrapper">
         <div className="about_header">About Us</div>
@@ -31,4 +31,4 @@ const SecondPage = () => (
   </>
 )
 
-export default SecondPage;
+export default AboutUs;

@@ -5,8 +5,7 @@ import { makeStyles } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import { styled } from '@material-ui/styles';
 import axios from "axios";
-import { Link } from "gatsby"
-import Layout from "../components/layout"
+import SEO from "../components/seo";
 
 const MyButton = styled(Button)({
     background: '#7B807A',
@@ -85,6 +84,8 @@ const ContactUs = (props)=> {
     }
 
     return (
+    <>
+        <SEO title="Contact Us" />
         <div className="contact_container">
             <div className="contact_wrapper">   
                 <div className="contact_header">
@@ -140,6 +141,7 @@ const ContactUs = (props)=> {
                 </div>
             </div>
         </div>
+    </>                          
     )
 }
 

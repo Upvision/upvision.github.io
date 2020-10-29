@@ -4,12 +4,13 @@ import "../css/projects.css"
 import ProjectCard from "../components/projectCard"
 import Grid from "@material-ui/core/Grid"
 
-import { graphql } from 'gatsby'
+import SEO from "../components/seo"
 import data from '../../data/githubData.json'
 
 const ProjectsPage = () => {
   return (
     <>
+      <SEO title="Projects" />
       <div className="body-container">
         <br />
         <br />

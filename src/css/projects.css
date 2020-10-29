@@ -60,6 +60,7 @@
 }
 .container .post .header_post .main-img {
   min-height: 100%;
+  width: 100%;
   transition: ease-in-out 600ms;
 }
 .container .post .body_post {

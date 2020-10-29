@@ -28,7 +28,7 @@
   color: white;
 }
 
-.hero {
+#hero, #hero div {
   top: 0;
   left: 0;
   height: 100%;
@@ -38,7 +38,7 @@
   visibility: visible;
 }
 
-.hero.hide {
+#hero.hide {
   opacity: 0;
   transition: opacity 0.1s ease-in;
 }
