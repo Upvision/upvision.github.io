@@ -15,8 +15,13 @@ The mentors for the project are,
 1. Beeta Samad ([@DumbSkull](https://github.com/DumbSkull)) - Leader, Project head.
 2. Rishikesh Anand ([@Blakeinstein](https://github.com/Blakeinstein)) - Repo manager, advisor.
 3. Abhishek Kumar Suman ([@aksuman055](https://github.com/aksuman055)) - Content manager.
-4. Prashant Chouhan ([@Percy99](https://github.com/Percy99)) - Technical advisor.
-5. Ritik Gupta ([@hey-ritikgupta](https://github.com/hey-ritikgupta)) - Design Lead.
+
+## 💎 Contributors
+
+1. Ritik Gupta ([@hey-ritikgupta](https://github.com/hey-ritikgupta)) - Logo, repository banners.
+2. Navneet Singh ([@Navneet-Singh-123])(https://github.com/Navneet-Singh-123) - About us and Contact us.
+3. Shivam Rajput ([@shivamrajput177])(https://github.com/shivamrajput177) - Members
+
 
 Contribution access has also been given to the web-dev team, ([@Upvision/web-dev](https://github.com/orgs/Upvision/teams/web-dev)).
 

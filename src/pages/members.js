@@ -1,10 +1,12 @@
 import React from "react"
 import Grid from "@material-ui/core/Grid";
 import MembersCard from "../components/membersCard";
+import SEO from "../components/seo"
+
 function members() {
   return (
    <>
-
+<SEO title="Members" />
 <h1 className="poshead">PRESIDENT</h1>
 <Grid container direction="row" justify="space-evenly" alignItems="center">
     <MembersCard
