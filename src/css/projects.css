@@ -68,7 +68,7 @@
   background-image: linear-gradient(
     to bottom right,
     #c5ebd8,
-    #13a884
+    hsl(166, 80%, 37%)
   );
   position: absolute;
   bottom: 0;
