@@ -24,7 +24,13 @@
     font-weight: 400;
     font-size: 1.3rem;
     letter-spacing: 3px;
-}   
+}  
+
+.contact_msg{
+    margin-top: 20px;
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+}
 
 @media screen and (max-width: 1300px){
     .contact_header{
