@@ -1,7 +1,8 @@
 import fs from 'fs';
 import axios from 'axios';
 
-const key = process.env.GHTOKEN
+// ! Github Data
+const ghKey = process.env.GHTOKEN
 const query = `
 query OrgDetails {
     organization(login:"UpVision") {
@@ -26,7 +27,7 @@ let request = (await axios({
     url: 'https://api.github.com/graphql',
     method: 'post',
     headers: {
-      Authorization: `bearer ${ key }`
+      Authorization: `bearer ${ ghKey }`
     },
     data: {
       query: query
@@ -44,7 +45,7 @@ await Promise.all(data.organization.repositories.edges.map(async (edge) => {
         url: `https://api.github.com/repos/UpVision/${edge.node.name}/contributors`, 
         method: 'get',
         headers: {
-            "Authorization": `token ${ key }`,
+            "Authorization": `token ${ ghKey }`,
         }
     });
 
@@ -63,5 +64,29 @@ let finalData = data.organization.repositories.edges.map(edge => {
 
 fs.writeFile('./data/githubData.json', JSON.stringify(finalData, null, 2), err => {
     if (err) throw err;
-    console.log("Data written, succesfully!");
+    console.log("Github Data written, succesfully!");
 })
+
+// ! Google calendar Data
+const googleAuth = process.env.googleAuth
+const calendarId = "rishi1998@gmail.com"
+
+let now = new Date();
+let nowp3 = new Date(now);
+nowp3.setMonth(nowp3.getMonth() + 3);
+if (nowp3.getDate() != now.getDate()) nowp3.setDate(0);
+
+await axios({
+    url: `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events`,
+    method: 'get',
+    params: {
+        key: `${ googleAuth }`,
+        timeMax: `${ nowp3.toISOString() }`,
+        timeMin: `${ now.toISOString() }`
+    }
+}).then(res => {
+    fs.writeFile('./data/calendarData.json', JSON.stringify(res.data.items, null, 2), err => {
+        if (err) throw err;
+        console.log("Calendar Data written, succesfully!");
+    })
+});
