@@ -27,14 +27,6 @@ jobs:
           npm i axios
           npm run fetch
       -
-        name: Commit latest github data
-        uses: EndBug/add-and-commit@v5
-        with: 
-          add: 'data'
-          message: 'Latest github data update for ${{ env.GITHUB_RUN_ID }}'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      -
         name: Build project
         uses: enriikke/gatsby-gh-pages-action@v2
         with:
