@@ -1,59 +1,61 @@
 .flip-card {
-    background-color: transparent;
-    width: 300px;
-    height: 200px;
-    perspective: 1000px; 
-  }
-  
-  .flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-  }
-  
-  .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-  }
-  
-  .flip-card-front, .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden; /* Safari */
-    backface-visibility: hidden;
-  }
-  
-  .flip-card-back {
-    background-color: rgb(30, 42, 54);
-    color: white;
-    transform: rotateY(180deg);
-  }
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+  margin: auto;
+  margin-bottom: calc(2em + 2.5em);
+}
 
-  .poshead{
-    color: hsl(166, 80%, 37%);
-    border-bottom: 1px solid  hsl(166, 80%, 37%);
-    border-top : 1px solid  hsl(166, 80%, 37%);
-    padding-top: 2px;
-    padding-bottom: 6px;
-    width: fit-content;
-    text-align:center;
-    margin: auto;
-    margin-top:5rem;
-    margin-bottom:5rem; 
-  }
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
 
-  .icons{
-      color: hsl(166, 80%, 37%);
-      padding: 10px;
-      font-size: 40;
-      padding-bottom: 2px;
-  }
-  .icons:hover{
-    /* transform: scale(1.5);
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  background-color: rgb(30, 42, 54);
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.poshead {
+  color: hsl(166, 80%, 37%);
+  border-bottom: 1px solid hsl(166, 80%, 37%);
+  border-top: 1px solid hsl(166, 80%, 37%);
+  padding-top: 2px;
+  padding-bottom: 6px;
+  width: fit-content;
+  text-align: center;
+  margin: auto;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.icons {
+  color: hsl(166, 80%, 37%);
+  padding: 10px;
+  font-size: 40;
+  padding-bottom: 2px;
+}
+.icons:hover {
+  /* transform: scale(1.5);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
-    color: black;
-      
-  }
+  color: black;
+}
