@@ -1,10 +1,11 @@
 import React from "react"
 import EventCard from "../components/eventCard"
 import "../css/events.css"
-import Grid from "@material-ui/core/Grid"
+import data from "../../data/calendarData.json"
 
 function Events(props) {
-  const events = [{}, {}, {}]
+  const events = data
+  console.log("events: ", events)
 
   return (
     <div className="body-container">
@@ -12,9 +13,18 @@ function Events(props) {
       <br />
       <div className="header">Events</div>
       <div className="hero-section">
-        <div class="card-grid">
+        <div className="card-grid">
           {events.length !== 0 ? (
-            events.map((event, index) => <EventCard key={index} />)
+            events.map((event, index) => (
+              <EventCard
+                key={index}
+                title={event.summary}
+                description={event.description}
+                startDate={event.start.date}
+                endDate={event.end.date}
+                attachments={event.attachments}
+              />
+            ))
           ) : (
             <div className="about_container">
               <div className="about_wrapper center">

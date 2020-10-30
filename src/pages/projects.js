@@ -5,7 +5,7 @@ import ProjectCard from "../components/projectCard"
 import Grid from "@material-ui/core/Grid"
 
 import SEO from "../components/seo"
-import data from '../../data/githubData.json'
+import data from "../../data/githubData.json"
 
 const ProjectsPage = () => {
   return (
@@ -17,13 +17,16 @@ const ProjectsPage = () => {
         <div className="projects-header">Projects</div>
         <br />
         <Grid container spacing={3}>
-          {data.map(projectCard => {
+          {data.map((projectCard, index) => {
             return (
               <Grid item xs={12} sm={6} lg={4}>
                 <ProjectCard
+                  key={index}
                   title={projectCard.name || "Error finding name"}
                   imageURL={projectCard.openGraphImageUrl}
-                  description={projectCard.description || "No description found"}
+                  description={
+                    projectCard.description || "No description found"
+                  }
                   repoLink={projectCard.url}
                   contributers={projectCard.contributors}
                 />
@@ -35,4 +38,4 @@ const ProjectsPage = () => {
     </>
   )
 }
-export default ProjectsPage;
+export default ProjectsPage

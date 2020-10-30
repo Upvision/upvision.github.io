@@ -28,9 +28,10 @@ function ProjectCard(props) {
               {contributers.length > 0 && (
                 <div className="body_collaborators">
                   <small>Contributers: </small>
-                  {contributers.map(contributer => {
+                  {contributers.map((contributer, index) => {
                     return (
                       <a
+                        key={index}
                         href={contributer.profileLink}
                         rel="noreferrer"
                         target="_blank"
