@@ -5,7 +5,34 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn"
 import Grid from "@material-ui/core/Grid"
 import GitHubIcon from "@material-ui/icons/GitHub"
 function MembersCard(props) {
-  const { membername, imgprof, post, about, insta, linkedin, github } = props
+  let { name, about, post, igUrl, linkedInUrl, githubUrl } = props
+
+  const [photoUrl, setPhotoUrl] = React.useState(props.photoUrl)
+
+  const retrieveIdFromDriveLink = driveUrl => {
+    const startIndexOfId = driveUrl.indexOf("/file/d/") + 8
+    const lastIndexOfId =
+      driveUrl.substring(startIndexOfId).indexOf("/") + startIndexOfId
+    return driveUrl.substring(startIndexOfId, lastIndexOfId)
+  }
+  React.useEffect(() => {
+    if (photoUrl && photoUrl.startsWith("https://drive.google.com")) {
+      const id = retrieveIdFromDriveLink(photoUrl)
+      setPhotoUrl("https://drive.google.com/uc?export=view&id=" + id)
+    }
+
+    if (!photoUrl)
+      setPhotoUrl(
+        "https://drive.google.com/uc?export=view&id=1km3V6PP70MTUsNWFEgdVea6jv-0BMnRT"
+      )
+  }, [])
+
+  const imageError = () => {
+    setPhotoUrl(
+      "https://drive.google.com/uc?export=view&id=1km3V6PP70MTUsNWFEgdVea6jv-0BMnRT"
+    )
+  }
+
   return (
     <>
       <Grid>
@@ -13,8 +40,9 @@ function MembersCard(props) {
           <div className="flip-card-inner">
             <div className="flip-card-front">
               <img
-                src={imgprof}
-                alt="Img"
+                src={photoUrl}
+                alt={name + " | Image"}
+                onError={imageError}
                 style={{ width: 320, height: 320, borderRadius: 320 / 2 }}
               />
             </div>
@@ -23,25 +51,31 @@ function MembersCard(props) {
               style={{ width: 320, height: 320, borderRadius: 320 / 2 }}
             >
               <div
-                style={{ textAlign: "center", margin: "6px", padding: "6px" }}
+                style={{ textAlign: "center", margin: "6px", padding: "25px" }}
               >
                 <br />
-                <h3 style={{ fontSize: "1.45em" }}> {membername} </h3>
+                <h3 style={{ fontSize: "1.45em" }}> {name} </h3>
                 <small>{post}</small>
 
                 <div style={{ paddingLeft: "10px", paddingRight: "10px" }}>
                   <hr className="hr-style" />
-                  <p>{about}</p>
+                  {about ? <p>{about}</p> : null}
                   <Grid>
-                    <a href={insta} className="icons">
-                      <InstagramIcon />
-                    </a>
-                    <a href={linkedin} className="icons">
-                      <LinkedInIcon />
-                    </a>
-                    <a href={github} className="icons">
-                      <GitHubIcon />
-                    </a>
+                    {igUrl ? (
+                      <a href={igUrl} className="icons">
+                        <InstagramIcon />
+                      </a>
+                    ) : null}
+                    {linkedInUrl ? (
+                      <a href={linkedInUrl} className="icons">
+                        <LinkedInIcon />
+                      </a>
+                    ) : null}
+                    {githubUrl ? (
+                      <a href={githubUrl} className="icons">
+                        <GitHubIcon />
+                      </a>
+                    ) : null}
                   </Grid>
                 </div>
               </div>
@@ -51,7 +85,7 @@ function MembersCard(props) {
             <h2
               style={{ textAlign: "center", color: "white", marginTop: "10px" }}
             >
-              {membername}
+              {name}
             </h2>
           </div>
         </div>

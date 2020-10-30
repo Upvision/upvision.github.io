@@ -2,94 +2,21 @@ import React from "react"
 import Grid from "@material-ui/core/Grid"
 import MembersCard from "../components/membersCard"
 import SEO from "../components/seo"
+import data from "../../data/membersData.json"
 
 function members() {
-  const generalSecretary = {
-    membername: "JOHN WICK",
-    imgprof: "https://picsum.photos/500/500",
-    post: "President",
-    about:
-      "Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ",
-    insta: "https://www.instagram.com/",
-    linkedin: "https://www.linkedin.com/",
-    github: "https://www.github.com/",
-  }
+  const members = data
+  const generalSecretary = members.find(member =>
+    member.post.startsWith("General Secretary")
+  )
 
-  const deputyGeneralSecretaries = [
-    {
-      membername: "JOHN WICK",
-      imgprof: "https://picsum.photos/500/500",
-      post: "President",
-      about:
-        "Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ",
-      insta: "https://www.instagram.com/",
-      linkedin: "https://www.linkedin.com/",
-      github: "https://www.github.com/",
-    },
-  ]
+  const deputyGeneralSecretaries = members.filter(member =>
+    member.post.startsWith("Deputy General Secretary")
+  )
 
-  const executiveMembers = [
-    {
-      membername: "JOHN WICK",
-      imgprof: "https://picsum.photos/500/500",
-      post: "President",
-      about:
-        "Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ",
-      insta: "https://www.instagram.com/",
-      linkedin: "https://www.linkedin.com/",
-      github: "https://www.github.com/",
-    },
-    {
-      membername: "JOHN WICK",
-      imgprof: "https://picsum.photos/500/500",
-      post: "President",
-      about:
-        "Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ",
-      insta: "https://www.instagram.com/",
-      linkedin: "https://www.linkedin.com/",
-      github: "https://www.github.com/",
-    },
-    {
-      membername: "JOHN WICK",
-      imgprof: "https://picsum.photos/500/500",
-      post: "President",
-      about:
-        "Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ",
-      insta: "https://www.instagram.com/",
-      linkedin: "https://www.linkedin.com/",
-      github: "https://www.github.com/",
-    },
-    {
-      membername: "JOHN WICK",
-      imgprof: "https://picsum.photos/500/500",
-      post: "President",
-      about:
-        "Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ",
-      insta: "https://www.instagram.com/",
-      linkedin: "https://www.linkedin.com/",
-      github: "https://www.github.com/",
-    },
-    {
-      membername: "JOHN WICK",
-      imgprof: "https://picsum.photos/500/500",
-      post: "President",
-      about:
-        "Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ",
-      insta: "https://www.instagram.com/",
-      linkedin: "https://www.linkedin.com/",
-      github: "https://www.github.com/",
-    },
-    {
-      membername: "JOHN WICK",
-      imgprof: "https://picsum.photos/500/500",
-      post: "President",
-      about:
-        "Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ Ex intern at XYZ",
-      insta: "https://www.instagram.com/",
-      linkedin: "https://www.linkedin.com/",
-      github: "https://www.github.com/",
-    },
-  ]
+  const executiveMembers = members.filter(member =>
+    member.post.startsWith("Executive Member")
+  )
 
   return (
     <>
@@ -103,13 +30,13 @@ function members() {
       >
         <Grid item xs={12} md={4} lg={3}>
           <MembersCard
-            membername={generalSecretary.membername}
-            imgprof={generalSecretary.imgprof}
+            name={generalSecretary.name}
+            photoUrl={generalSecretary.photoUrl}
             post={generalSecretary.post}
             about={generalSecretary.about}
-            insta={generalSecretary.insta}
-            linkedin={generalSecretary.linkedin}
-            github={generalSecretary.github}
+            igUrl={generalSecretary.igUrl}
+            linkedInUrl={generalSecretary.linkedInUrl}
+            githubUrl={generalSecretary.githubUrl}
           />
         </Grid>
       </Grid>
@@ -121,16 +48,16 @@ function members() {
         justify="space-evenly"
         alignItems="center"
       >
-        {deputyGeneralSecretaries.map(dgs => (
-          <Grid item xs={12} md={4} lg={3}>
+        {deputyGeneralSecretaries.map((dgs, index) => (
+          <Grid item xs={12} md={4} lg={3} key={index}>
             <MembersCard
-              membername={dgs.membername}
-              imgprof={dgs.imgprof}
+              name={dgs.name}
+              photoUrl={dgs.photoUrl}
               post={dgs.post}
               about={dgs.about}
-              insta={dgs.insta}
-              linkedin={dgs.linkedin}
-              github={dgs.github}
+              igUrl={dgs.igUrl}
+              linkedInUrl={dgs.linkedInUrl}
+              githubUrl={dgs.githubUrl}
             />
           </Grid>
         ))}
@@ -143,16 +70,16 @@ function members() {
         justify="space-evenly"
         alignItems="center"
       >
-        {executiveMembers.map(em => (
-          <Grid item xs={12} md={4} lg={3}>
+        {executiveMembers.map((em, index) => (
+          <Grid item xs={12} md={4} lg={3} key={index}>
             <MembersCard
-              membername={em.membername}
-              imgprof={em.imgprof}
+              name={em.name}
+              photoUrl={em.photoUrl}
               post={em.post}
               about={em.about}
-              insta={em.insta}
-              linkedin={em.linkedin}
-              github={em.github}
+              igUrl={em.igUrl}
+              linkedInUrl={em.linkedInUrl}
+              githubUrl={em.githubUrl}
             />
           </Grid>
         ))}
