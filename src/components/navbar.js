@@ -55,19 +55,26 @@ const marks = [
   },
   {
     value: 60,
-    label: "CONTACT US",
+    label: "EVENTS",
   },
   {
     value: 80,
-    label: "HOME2",
+    label: "MEMBERS",
   },
   {
     value: 100,
-    label: "HOME3",
+    label: "CONTACT US",
   },
 ]
 
-const siteMap = ["/", "/about/", "/projects/", "/contactus/", "/404/", "/404/"]
+const siteMap = [
+  "/",
+  "/about/",
+  "/projects/",
+  "/events/",
+  "/members/",
+  "/contactus/",
+]
 
 function Navbar(props) {
   const { mark, setMark, path } = props
