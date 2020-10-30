@@ -71,7 +71,7 @@ const siteMap = [
   "/",
   "/about/",
   "/projects/",
-  "/404/",
+  "/events/",
   "/members/",
   "/contactus/",
 ]

@@ -1,4 +1,5 @@
 .flip-card {
+  font-family: "Montserrat", sans-serif;
   background-color: transparent;
   width: 300px;
   height: 300px;
@@ -30,7 +31,8 @@
 }
 
 .flip-card-back {
-  background-color: rgb(30, 42, 54);
+  /* background-color: rgb(30, 42, 54)   */
+  background-image: linear-gradient(hsl(166, 80%, 37%), rgb(30, 42, 54));
   color: white;
   transform: rotateY(180deg);
 }
@@ -41,6 +43,7 @@
   border-top: 1px solid hsl(166, 80%, 37%);
   padding-top: 2px;
   padding-bottom: 6px;
+  font-size: calc(1em + 1.5vw);
   width: fit-content;
   text-align: center;
   margin: auto;
@@ -58,4 +61,10 @@
   /* transform: scale(1.5);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
   color: black;
+}
+
+.hr-style {
+  border-top: 3px solid hsl(166, 80%, 37%);
+  color: transparent;
+  border-radius: 20px;
 }

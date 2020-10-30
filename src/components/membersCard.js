@@ -27,19 +27,23 @@ function MembersCard(props) {
               >
                 <br />
                 <h3 style={{ fontSize: "1.45em" }}> {membername} </h3>
-                <h4 style={{ fontSize: "1.3em" }}>{post}</h4>
-                <p>{about}</p>
-                <Grid>
-                  <a href={insta} className="icons">
-                    <InstagramIcon />
-                  </a>
-                  <a href={linkedin} className="icons">
-                    <LinkedInIcon />
-                  </a>
-                  <a href={github} className="icons">
-                    <GitHubIcon />
-                  </a>
-                </Grid>
+                <small>{post}</small>
+
+                <div style={{ paddingLeft: "10px", paddingRight: "10px" }}>
+                  <hr className="hr-style" />
+                  <p>{about}</p>
+                  <Grid>
+                    <a href={insta} className="icons">
+                      <InstagramIcon />
+                    </a>
+                    <a href={linkedin} className="icons">
+                      <LinkedInIcon />
+                    </a>
+                    <a href={github} className="icons">
+                      <GitHubIcon />
+                    </a>
+                  </Grid>
+                </div>
               </div>
             </div>
           </div>
