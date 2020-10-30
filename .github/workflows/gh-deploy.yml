@@ -17,7 +17,7 @@ jobs:
         uses: SpicyPizza/create-envfile@v1
         with:
           envkey_GHTOKEN: ${{ secrets.ACCESS_TOKEN }}
-          envkey_googleAuth: ${{ secrets.GOOGLEAPIKEY }}
+          envkey_GCAUTH: ${{ secrets.GOOGLEAPIKEY }}
       - 
         name: Setup-node
         uses: actions/setup-node@v2-beta
