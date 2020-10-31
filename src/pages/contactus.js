@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import TextField from '@material-ui/core/TextField';
 import '../css/contact.css'
 import { makeStyles } from '@material-ui/core';
