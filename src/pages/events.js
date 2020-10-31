@@ -23,6 +23,7 @@ function Events(props) {
                 startDate={event.start.date}
                 endDate={event.end.date}
                 attachments={event.attachments}
+                link={event.htmlLink}
               />
             ))
           ) : (

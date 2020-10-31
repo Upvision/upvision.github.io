@@ -13,7 +13,7 @@ const Layout = props => {
   
   return (
     <>
-      <div id="hero" className={"hero " + (shouldDisplayHero? '' : 'hide')}>
+      <div id="hero" className={shouldDisplayHero? '' : 'hide'}>
         <Hero></Hero>
       </div>
       <div className="wrapper">

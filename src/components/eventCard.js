@@ -5,7 +5,7 @@ import Box from "@material-ui/core/Box"
 import moment from "moment-mini"
 
 function EventCard(props) {
-  const { title, description, attachments } = props
+  const { title, description, attachments, link } = props
   const startDate = moment(props.startDate)
   const endDate = moment(props.endDate)
 
@@ -16,7 +16,7 @@ function EventCard(props) {
 
   return (
     <>
-      <a className="card" href="#">
+      <a className="card" href={link}>
         <div
           className="card__background"
           style={{
@@ -28,7 +28,7 @@ function EventCard(props) {
           <Grid container spacing={3}>
             <Box clone order={{ xs: 2, md: 1 }}>
               <Grid item xs={12} md={3} lg={4}>
-                <img src={imageUrl} className={"img-on-hover "} />
+                <img src={imageUrl} alt={title} className={"img-on-hover "} />
               </Grid>
             </Box>
             <Box clone order={{ xs: 1, md: 2 }}>

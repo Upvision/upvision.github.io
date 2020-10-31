@@ -89,7 +89,7 @@ function Navbar(props) {
     const index = siteMap.findIndex(site => site === path)
     setValue(index * 20)
     setExpectedValue(index * 20)
-  }, [mark])
+  }, [mark, path])
 
   React.useEffect(() => {
     let currentValue = value

@@ -1,6 +1,6 @@
 <a href="https://upvision.github.io">
   <p align="center">
-      <img alt="UpVision" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
+      <img alt="UpVision" src="./src/images/logo.svg" width="60" />
   </p>
   <h1 align="center">
     UpVision
@@ -19,8 +19,8 @@ The mentors for the project are,
 ## 💎 Contributors
 
 1. Ritik Gupta ([@hey-ritikgupta](https://github.com/hey-ritikgupta)) - Logo, repository banners.
-2. Navneet Singh ([@Navneet-Singh-123])(https://github.com/Navneet-Singh-123) - About us and Contact us.
-3. Shivam Rajput ([@shivamrajput177])(https://github.com/shivamrajput177) - Members
+2. Navneet Singh ([@Navneet-Singh-123](https://github.com/Navneet-Singh-123)) - About us and Contact us.
+3. Shivam Rajput ([@shivamrajput177](https://github.com/shivamrajput177)) - Members
 
 
 Contribution access has also been given to the web-dev team, ([@Upvision/web-dev](https://github.com/orgs/Upvision/teams/web-dev)).
