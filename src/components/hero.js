@@ -38,9 +38,11 @@ function Logo(props) {
         </mesh>
     )
 }
+React.memo(Logo);
+
 function Hero(props) {
     return(
-        <Canvas {...props} shadowMap camera={{ fov: 75 }}>
+        <Canvas shadowMap camera={{ fov: 75 }}>
             <ambientLight intensity={0.2} />
             <pointLight position={[10, 10, 10]} />
             <pointLight position={[-10, -10, -10]} intensity={0.5} />
@@ -57,7 +59,7 @@ function Hero(props) {
                 shadow-camera-bottom={-10}
             />
             <Suspense fallback={null}>
-                <Logo position = {[0, 0, 0]} />
+                {props.shoulddisplay? <Logo position = {[0, 0, 0]} /> : null}
             </Suspense>
             <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2.5, 0]} receiveShadow>
                 <planeBufferGeometry attach="geometry" args={[10, 10]} />
