@@ -19,11 +19,12 @@
     margin-bottom: 30px;
 }
 
+
 .form_label{
     font-family: "Rubik", sans-serif;
-    font-weight: 400;
+    font-weight: 200;
+    font-style: italic;
     font-size: 1.3rem;
-    letter-spacing: 3px;
 }  
 
 .contact_msg{
@@ -44,4 +45,13 @@
     .contact_button{
         text-align: center;
     }
+}
+
+.MuiButton-root.Mui-disabled {
+    color: grey !important;
+    border: 1px solid grey !important;
+}
+
+.MuiInputBase-root {
+    color: white !important;
 }

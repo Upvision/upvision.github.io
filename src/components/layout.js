@@ -13,8 +13,8 @@ const Layout = props => {
   
   return (
     <>
-      <div id="hero" className={shouldDisplayHero? '' : 'hide'}>
-        <Hero></Hero>
+      <div id="hero">
+        <Hero shoulddisplay={shouldDisplayHero} />
       </div>
       <div className="wrapper">
         <Navbar path={path} />

@@ -1,6 +1,6 @@
 <a href="https://upvision.github.io">
   <p align="center">
-      <img alt="UpVision" src="./src/images/logo.svg" width="60" />
+      <img alt="UpVision" src="./src/images/logo.svg" width="100" />
   </p>
   <h1 align="center">
     UpVision
