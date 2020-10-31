@@ -1,21 +1,31 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react';
 import TextField from '@material-ui/core/TextField';
-import '../css/contact.css'
-import { makeStyles } from '@material-ui/core';
+import '../css/contact.css';
+import InputAdornment from '@material-ui/core/InputAdornment';
 import Button from '@material-ui/core/Button';
-import { styled } from '@material-ui/styles';
+import { withStyles } from '@material-ui/styles';
+import { AlternateEmail, Person, Send } from '@material-ui/icons'
 import axios from "axios";
 import SEO from "../components/seo";
 
-const MyButton = styled(Button)({
-    background: '#7B807A',
-    border: 0,
-    borderRadius: 5,
-    color: 'white',
-    height: 45,
-    padding: '0 30px',
-    marginTop: '20px'
-})
+const SubmitButton = withStyles({
+    root: {
+        background: 'transparent',
+        border: '1px solid #13e8b5',
+        borderRadius: 5,
+        color: 'white',
+        height: 45,
+        padding: '0 20px',
+        marginTop: '20px',
+        fontSize: '1.3rem',
+        letterSpacing: '1px',
+        textTransform: 'capitalize',
+        "&:hover": {
+            background: '#13a884',
+        },
+    },
+    
+})(Button);
 
 const intialFieldValues = {
     fullName: '', 
@@ -23,25 +33,52 @@ const intialFieldValues = {
     msg: ''
 }
 
-
-const useStyle = makeStyles(theme => ({
+const FormField = withStyles({
     root: {
-        '& .MuiFormControl-root': {
-            width: '100%', 
-            backgroundColor: 'white', 
-            marginTop: '20px', 
-            borderRadius: '5px',
-            marginBottom: '20px'
+        width: '100%', 
+        backgroundColor: 'transparent',
+        color: 'white',
+        marginTop: '20px', 
+        paddingTop: '0px',
+        borderRadius: '5px',
+        marginBottom: '20px',
+        '& label': {
+            color: '#13e8b5'
+        },
+        '& .Mui-focused': {
+            color: 'white'
+        },
+        '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+              borderColor: 'white',
+            },
+            '&:hover fieldset': {
+              borderColor: 'white',
+            },
+            '&.Mui-focused fieldset': {
+              borderColor: '#13e8b5',
+            },
+            '&.Mui-focused.Mui-error fieldset': {
+                borderColor: '#f44336',
+            },
+        },
+        '& .MuiFormHelperText-root': {
+            textAlign: 'right',
+            color: 'white',
         }
-    }
-}))
+    },
+})(TextField);
 
+const validateEmail = (email) => {
+    return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email.toLowerCase());
+}
 
-
+const isEmpty = (str) => {
+    return (!str || str.trim().length === 0);
+}
 const ContactUs = (props)=> {
 
     const [values, setValues] = useState(intialFieldValues);
-    const classes = useStyle();
 
     const [serverState, setServerState] = useState({
         submitting: false,
@@ -68,10 +105,10 @@ const ContactUs = (props)=> {
           data: new FormData(form)
         })
         .then(r => {
-        handleServerResponse(true, "Thanks!", form);
+            handleServerResponse(true, "Thanks!", form);
         })
         .catch(r => {
-        handleServerResponse(false, r.response.data.error, form);
+            handleServerResponse(false, r.response.data.error, form);
         });
     };
 
@@ -81,7 +118,32 @@ const ContactUs = (props)=> {
             ...values,
             [name]: value
         })
+        handleEmailValidation();
     }
+
+    const [validInput, setValidInput] = useState(false);
+    const [validMail, setValidMail] = useState(true);
+
+    const handleEmailValidation =() => {
+        if (isEmpty(values.email) || validateEmail(values.email)) {
+            setValidMail(true)
+        } else {
+            setValidMail(false)
+        }
+    }
+
+    useEffect(() => {
+        if (validMail && !(
+                isEmpty(values.email) ||
+                isEmpty(values.fullName) ||
+                isEmpty(values.msg)
+            )) {
+            setValidInput(true);
+        } else {
+            setValidInput(false);
+        }
+        console.log(validInput);
+    },)
 
     return (
     <>
@@ -92,44 +154,65 @@ const ContactUs = (props)=> {
                     Contact Us
                 </div>
                 <div className="contact_content">
-                    <form 
-                        className={classes.root} 
-                        action="https://getform.io/f/e259a4c6-8fc3-4832-84d5-30ef0176e489" 
-                        method="POST"
+                    <form
                         onSubmit={handleOnSubmit}
                     >
-                        <span className="form_label">Name:</span> 
-                        <TextField 
-                            variant="filled"
-                            label="Full Name"
+                        <FormField 
+                            variant="outlined"
                             name="fullName"
+                            label="Name"
                             value={values.fullName}
                             onChange={handleInputChange}
+                            InputProps={{
+                                startAdornment: (
+                                  <InputAdornment position="start">
+                                    <Person />
+                                  </InputAdornment>
+                                ),
+                            }}
                         />
-                        <span className="form_label">Email:</span> 
-                        <TextField 
-                            variant="filled"
-                            label="Email"
+                        <FormField
+                            error={!validMail}
+                            variant="outlined"
                             name="email"
+                            label="Email"
                             value={values.email}
                             onChange={handleInputChange}
+                            helperText={validMail? "" : "Invalid Email"}
+                            InputProps={{
+                                startAdornment: (
+                                  <InputAdornment position="start">
+                                    <AlternateEmail />
+                                  </InputAdornment>
+                                ),
+                            }}
                         />
-                        <span className="form_label">Message:</span> 
-                        <TextField
+                        <FormField
                             id="outlined-multiline-static"
-                            label="Your Message Here..."
                             multiline
+                            variant="outlined"
                             rows={5}
-                            variant="filled"
+                            label="Message"
                             value={values.msg}
                             onChange={handleInputChange}
                             name="msg"
+                            InputProps={{
+                                startAdornment: (
+                                  <InputAdornment position="start">
+                                    <Send />
+                                  </InputAdornment>
+                                ),
+                            }}
+                            inputProps={{
+                                maxLength: 255,
+                            }}
+                            helperText={values.msg.length>0? `${values.msg.length}/${255}` : ""}
                         />
-                        <MyButton 
+                        <SubmitButton 
                             className="contact_button" 
                             type="submit"
-                            disabled={serverState.submitting}
-                        >Submit</MyButton>
+                            disabled={serverState.submitting || !validInput}
+                        >Submit</SubmitButton>
                         <div className="contact_msg">
                             {serverState.status && (
                                 <p className={!serverState.status.ok ? "ErrorMsg" : ""}>
