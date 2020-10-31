@@ -1,7 +1,7 @@
 name: gh-test
 
 on:
-  pull_request:
+  pull_request_target:
     branches:
       - master
 
@@ -12,9 +12,12 @@ jobs:
       -
         name: Checkout
         uses: actions/checkout@v2
-      
-      - uses: actions/setup-node@v2-beta
-
+        with:
+          ref: ${{github.event.pull_request.head.ref}}
+          repository: ${{github.event.pull_request.head.repo.full_name}}
+      - 
+        name: Setup node
+        uses: actions/setup-node@v2-beta
       -
         name: Test build project
         run: |

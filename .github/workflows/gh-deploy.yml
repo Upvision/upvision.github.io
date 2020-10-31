@@ -24,6 +24,7 @@ jobs:
         with:
           node-version: '14'
       -
+        name: Fetch Data
         run: |
           npm i axios
           npm run fetch
