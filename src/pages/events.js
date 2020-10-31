@@ -2,13 +2,14 @@ import React from "react"
 import EventCard from "../components/eventCard"
 import "../css/events.css"
 import data from "../../data/calendarData.json"
+import SEO from "../components/seo"
 
 function Events(props) {
   const events = data
-  console.log("events: ", events)
 
   return (
     <div className="body-container">
+      <SEO title="Events" />
       <br />
       <br />
       <div className="header">Events</div>
