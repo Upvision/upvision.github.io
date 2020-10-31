@@ -15,11 +15,11 @@ function Logo(props) {
     const [active, setActive] = useState(false);
 
     useFrame(state => {
-        group.current.position.y = ((Math.sin(state.clock.getElapsedTime())) / 2)
+        group.current.position.y = ((0.2 + Math.sin(state.clock.getElapsedTime())) / 2)
         group.current.rotation.z += 0.01
     });
 
-    let scaleVal = window.innerHeight / 18;
+    let scaleVal = window.innerHeight / 24;
 
     return (
         <mesh
@@ -27,14 +27,14 @@ function Logo(props) {
             ref={group}
             castShadow
             dispose={null}
-            geometry = {nodes.Curve001.geometry}
-            scale = {active ? [scaleVal + 5, scaleVal + 5, scaleVal + 5] : [scaleVal, scaleVal, scaleVal]}
+            geometry = {nodes.logo_U.geometry}
+            scale = {active ? [scaleVal + 5, scaleVal/2 + 2.5, scaleVal + 5] : [scaleVal, scaleVal/2, scaleVal]}
             rotation={[Math.PI / 2, 0, 0]}
             onClick = {(e) => setActive(!active)}
             onPointerOver = {(e) => setHover(true)}
             onPointerOut = {(e) => setHover(false)}
         >
-            <meshLambertMaterial attach="material" color={hovered? 'lightblue' : 'lightgrey'} />
+            <meshLambertMaterial attach="material" color={hovered? 'lightblue' : 'lightgrey'} opacity={0.69}/>
         </mesh>
     )
 }
@@ -59,7 +59,7 @@ function Hero(props) {
             <Suspense fallback={null}>
                 <Logo position = {[0, 0, 0]} />
             </Suspense>
-            <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2.3, 0]} receiveShadow>
+            <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2.5, 0]} receiveShadow>
                 <planeBufferGeometry attach="geometry" args={[10, 10]} />
                 <shadowMaterial attach="material" transparent opacity={0.5}/>
             </mesh>

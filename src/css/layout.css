@@ -28,9 +28,7 @@
   color: white;
 }
 
-#hero, #hero div {
-  top: 0;
-  left: 0;
+#hero {
   height: 100%;
   width: 100%;
   z-index: -1;

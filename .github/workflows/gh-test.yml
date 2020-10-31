@@ -1,4 +1,4 @@
-name: gh-deploy
+name: gh-test
 
 on:
   pull_request:
