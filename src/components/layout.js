@@ -9,12 +9,11 @@ import Hero from "./hero"
 
 const Layout = props => {
   const { children, path } = props;
-  let shouldDisplayHero = (path === '/');
   
   return (
     <>
       <div id="hero">
-        <Hero shoulddisplay={shouldDisplayHero} />
+        <Hero/>
       </div>
       <div className="wrapper">
         <Navbar path={path} />

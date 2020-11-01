@@ -2,6 +2,7 @@ import React, { Suspense, useRef, useState } from 'react'
 import { Canvas, useFrame, useLoader } from 'react-three-fiber'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { softShadows } from 'drei';
+import { Location } from '@reach/router';
 
 import logoModel from "../assets/logo.glb";
 
@@ -59,7 +60,17 @@ function Hero(props) {
                 shadow-camera-bottom={-10}
             />
             <Suspense fallback={null}>
-                {props.shoulddisplay? <Logo position = {[0, 0, 0]} /> : null}
+                <Location>
+                    {({location})=> {
+                        console.log(location.pathname);
+                        if (location.pathname === "/") {
+                            return <Logo position = {[0, 0, 0]} />
+                        } else {
+                            return null;
+                        }
+                    }}
+                </Location>
+                {/* {props.shoulddisplay? <Logo position = {[0, 0, 0]} /> : null} */}
             </Suspense>
             <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2.5, 0]} receiveShadow>
                 <planeBufferGeometry attach="geometry" args={[10, 10]} />
