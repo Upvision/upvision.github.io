@@ -28,9 +28,9 @@ const SubmitButton = withStyles({
 })(Button);
 
 const intialFieldValues = {
-    fullName: '', 
+    name: '', 
     email: '', 
-    msg: ''
+    message: ''
 }
 
 const FormField = withStyles({
@@ -101,7 +101,7 @@ const ContactUs = (props)=> {
         setServerState({ submitting: true });
         axios({
           method: "post",
-          url: "https://getform.io/f/e259a4c6-8fc3-4832-84d5-30ef0176e489",
+          url: "https://getform.io/f/c128f607-4510-4b63-8b70-42dca5b07a3a",
           data: new FormData(form)
         })
         .then(r => {
@@ -135,8 +135,8 @@ const ContactUs = (props)=> {
     useEffect(() => {
         if (validMail && !(
                 isEmpty(values.email) ||
-                isEmpty(values.fullName) ||
-                isEmpty(values.msg)
+                isEmpty(values.name) ||
+                isEmpty(values.message)
             )) {
             setValidInput(true);
         } else {
@@ -159,7 +159,7 @@ const ContactUs = (props)=> {
                     >
                         <FormField 
                             variant="outlined"
-                            name="fullName"
+                            name="name"
                             label="Name"
                             value={values.fullName}
                             onChange={handleInputChange}
@@ -195,7 +195,7 @@ const ContactUs = (props)=> {
                             label="Message"
                             value={values.msg}
                             onChange={handleInputChange}
-                            name="msg"
+                            name="message"
                             InputProps={{
                                 startAdornment: (
                                   <InputAdornment position="start">
@@ -206,7 +206,7 @@ const ContactUs = (props)=> {
                             inputProps={{
                                 maxLength: 255,
                             }}
-                            helperText={values.msg.length>0? `${values.msg.length}/${255}` : ""}
+                            helperText={values.message.length>0? `${values.message.length}/${255}` : ""}
                         />
                         <SubmitButton 
                             className="contact_button" 
