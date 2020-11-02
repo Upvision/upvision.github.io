@@ -24,8 +24,12 @@
 }
 
 .wrapper .footer {
-  flex: 0 0 10px;
+  flex: 0 0 20px;
+  padding-bottom: 10px;
   color: white;
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 #hero {
@@ -36,7 +40,10 @@
   visibility: visible;
 }
 
-#hero.hide {
-  opacity: 0;
-  transition: opacity 0.1s ease-in;
+#Page {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
 }
