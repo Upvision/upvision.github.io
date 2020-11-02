@@ -7,11 +7,9 @@ import "../css/layout.css"
 
 import Hero from "./hero"
 
-const Layout = props => {
-  const { children, path } = props;
-  
+const Layout = ({children, path}) => {
   return (
-    <>
+    <div id="Page">
       <div id="hero">
         <Hero/>
       </div>
@@ -20,7 +18,7 @@ const Layout = props => {
         <div className="content">{children}</div>
         <Footer />
       </div>
-    </>
+    </div>
   )
 }
 

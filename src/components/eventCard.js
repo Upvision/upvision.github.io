@@ -8,8 +8,9 @@ function EventCard(props) {
   const { title, description, attachments, link } = props
   const startDate = moment(props.startDate)
   const endDate = moment(props.endDate)
-
-  const imageAttachment = attachments.find(a => a.mimeType.startsWith("image/"))
+  let imageAttachment = null;
+  if (attachments)
+    imageAttachment = attachments.find(a => a.mimeType.startsWith("image/")) || null;
   let imageUrl = imageAttachment
     ? "https://drive.google.com/uc?export=view&id=" + imageAttachment.fileId
     : "https://drive.google.com/uc?export=view&id=1FQCwCAFxeagUXASyYQEIFljeQ-dTqiOU"
