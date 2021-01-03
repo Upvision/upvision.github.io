@@ -40,7 +40,6 @@ let data = request.data;
 
 await Promise.all(data.organization.repositories.edges.map(async (edge) => {
     edge.node.contributors = []
-
     let contributors = await axios({
         url: `https://api.github.com/repos/UpVision/${edge.node.name}/contributors`, 
         method: 'get',
@@ -49,13 +48,15 @@ await Promise.all(data.organization.repositories.edges.map(async (edge) => {
         }
     });
 
-    contributors.data.forEach(contributor => {
-        edge.node.contributors.push({
-            'profileLink': contributor.url,
-            'imageURL': contributor.avatar_url,
-            'altTag': contributor.login
-        })
-    });
+    if (contributors.data){
+        contributors.data.forEach(contributor => {
+            edge.node.contributors.push({
+                'profileLink': contributor.url,
+                'imageURL': contributor.avatar_url,
+                'altTag': contributor.login
+            })
+        });
+    }
 }));
 
 let finalData = data.organization.repositories.edges.map(edge => {
