@@ -32,8 +32,13 @@ jobs:
           npm run fetch
       -
         name: Build project
-        uses: enriikke/gatsby-gh-pages-action@v2
+        run : npm run build
+          
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          access-token: ${{ secrets.ACCESS_TOKEN }}
-          deploy-branch: release
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: release
+          cname: upvision.co
       
