@@ -62,7 +62,6 @@ function Hero(props) {
             <Suspense fallback={null}>
                 <Location>
                     {({location})=> {
-                        console.log(location.pathname);
                         if (location.pathname === "/") {
                             return <Logo position = {[0, 0, 0]} />
                         } else {
