@@ -118,11 +118,11 @@ function Navbar(props) {
     navigate(siteMap[Math.max(0, finalValue / 20)])
   }
 
-  React.useEffect(() => {
-    window.addEventListener("scroll", event => {
-      console.log(event)
-    })
-  })
+  // React.useEffect(() => {
+  //   window.addEventListener("scroll", event => {
+  //     console.log(event)
+  //   })
+  // })
 
   return (
     <>
