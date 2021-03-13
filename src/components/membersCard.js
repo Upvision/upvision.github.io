@@ -25,6 +25,7 @@ function MembersCard(props) {
       setPhotoUrl(
         "https://drive.google.com/uc?export=view&id=1km3V6PP70MTUsNWFEgdVea6jv-0BMnRT"
       )
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const imageError = () => {
@@ -44,6 +45,7 @@ function MembersCard(props) {
                 alt={name + " | Image"}
                 onError={imageError}
                 style={{ width: 320, height: 320, borderRadius: 320 / 2 }}
+                className="memberCardImg"
               />
             </div>
             <div

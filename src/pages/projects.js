@@ -19,7 +19,7 @@ const ProjectsPage = () => {
         <Grid container spacing={3}>
           {data.map((projectCard, index) => {
             return (
-              <Grid item xs={12} sm={6} lg={4}>
+              <Grid item xs={12} sm={6} lg={4} key={index}>
                 <ProjectCard
                   key={index}
                   title={projectCard.name || "Error finding name"}

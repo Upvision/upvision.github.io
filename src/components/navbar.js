@@ -100,6 +100,7 @@ function Navbar(props) {
         else if (currentValue > expectedValue) setValue(currentValue--)
       }
     }, 7)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const handleCommittedChange = (event, newValue) => {
