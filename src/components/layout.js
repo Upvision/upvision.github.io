@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import PropTypes from "prop-types"
 
 import Navbar from "./navbar"
@@ -8,6 +8,7 @@ import "../css/layout.css"
 import Hero from "./hero"
 
 const Layout = ({children, path}) => {
+
   return (
     <div id="Page">
       <div id="hero">

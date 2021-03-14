@@ -36,6 +36,9 @@ const muiTheme = createMuiTheme({
       mark: {
         backgroundColor: transparent,
       },
+      markActive: {
+        backgroundColor: transparent,
+      },
     },
   },
 })
@@ -77,7 +80,8 @@ const siteMap = [
 ]
 
 function Navbar(props) {
-  const { mark, setMark, location } = props
+  const { mark, setMark, path } = props
+  let location = path.pathname
   const [value, setValue] = React.useState(0)
   const [expectedValue, setExpectedValue] = React.useState(0)
 
