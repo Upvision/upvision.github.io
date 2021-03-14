@@ -1,12 +1,9 @@
 import React, { Suspense, useRef, useState } from 'react'
 import { Canvas, useFrame, useLoader } from 'react-three-fiber'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-import { softShadows } from 'drei';
 import { Location } from '@reach/router';
 
 import logoModel from "../assets/logo.glb";
-
-softShadows({ size: 0.005, frustrum: 2.75 });
 
 function Logo(props) {
     const group = useRef();

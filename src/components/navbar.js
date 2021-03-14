@@ -77,7 +77,7 @@ const siteMap = [
 ]
 
 function Navbar(props) {
-  const { mark, setMark, path } = props
+  const { mark, setMark, location } = props
   const [value, setValue] = React.useState(0)
   const [expectedValue, setExpectedValue] = React.useState(0)
 
@@ -86,10 +86,10 @@ function Navbar(props) {
   }
 
   React.useEffect(() => {
-    const index = siteMap.findIndex(site => site === path)
+    const index = siteMap.findIndex(site => site === location)
     setValue(index * 20)
     setExpectedValue(index * 20)
-  }, [mark, path])
+  }, [mark, location])
 
   React.useEffect(() => {
     let currentValue = value
