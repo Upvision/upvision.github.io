@@ -142,8 +142,9 @@ const ContactUs = (props)=> {
         } else {
             setValidInput(false);
         }
-        console.log(validInput);
-    },)
+        // console.log(validInput);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [values.email, values.name, values.message, validMail])
 
     return (
     <>
