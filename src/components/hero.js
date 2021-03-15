@@ -66,7 +66,6 @@ function Hero(props) {
                         }
                     }}
                 </Location>
-                {/* {props.shoulddisplay? <Logo position = {[0, 0, 0]} /> : null} */}
             </Suspense>
             <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2.5, 0]} receiveShadow>
                 <planeBufferGeometry attach="geometry" args={[10, 10]} />
