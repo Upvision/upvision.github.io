@@ -1,9 +1,9 @@
 import Grid from "@material-ui/core/Grid"
 import MembersCard from "../components/membersCard"
+import data from "../../mockData/membersData.json"
 import { NextSeo } from 'next-seo'
 
 export async function getStaticProps() {
-  import data from "../../data/membersData.json"
   return {
     props: { data }
   }

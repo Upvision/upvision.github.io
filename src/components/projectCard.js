@@ -1,4 +1,4 @@
-import React from "react"
+import styles from "../css/projects.module.css"
 import arrow from "../images/arrow.svg"
 
 function ProjectCard(props) {
@@ -8,14 +8,14 @@ function ProjectCard(props) {
     : "https://images.pexels.com/photos/2529973/pexels-photo-2529973.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
   return (
     <div>
-      <div className="container">
-        <div className="post">
-          <div className="header_post">
-            <img src={image} alt={title} className="main-img" />
+      <div className={styles.container}>
+        <div className={styles.post}>
+          <div className={styles.header_post}>
+            <img src={image} alt={title} className={styles.main_img}/>
           </div>
 
-          <div className="body_post">
-            <div className="post_content">
+          <div className={styles.body_post}>
+            <div className={styles.post_content}>
               <h1 style={{ marginBottom: "5px" }}>
                 <a
                   style={{ textDecoration: "none", color: "black" }}
@@ -26,7 +26,7 @@ function ProjectCard(props) {
               </h1>
 
               {contributers.length > 0 && (
-                <div className="body_collaborators">
+                <div className={styles.body_collaborators}>
                   <small>Contributers: </small>
                   {contributers.map((contributer, index) => {
                     return (
@@ -39,7 +39,7 @@ function ProjectCard(props) {
                         <img
                           src={contributer.imageURL}
                           alt={contributer.altTag}
-                          className="avatar"
+                          className={styles.avatar}
                         />
                       </a>
                     )
@@ -52,7 +52,7 @@ function ProjectCard(props) {
                 {description}
               </p>
             </div>
-            <div className="card_repoUrl">
+            <div className={styles.card_repoUrl}>
               <a href={repoLink} rel="noreferrer" target="_blank">
                 <img src={arrow} alt="Repository..." width="69" />
               </a>

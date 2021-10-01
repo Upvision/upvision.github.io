@@ -1,23 +1,24 @@
-import { Link } from 'next/link'
+import Link from 'next/link'
 
-import "../css/footer.css"
+import styles from "../css/footer.module.css"
 
 function Footer() {
-    return (
-        <>
-            <div className="footer">  
-                © {new Date().getFullYear()},
-                {` `}
-                <Link href="/">
-                    <a 
-                        style={{
-                            color: `white`,
-                        }}
-                    >UpVision</a>
-                </Link>
-            </div>
-        </>
-    )
+  return (
+    <>
+      <div className={styles.footer}>
+        © {new Date().getFullYear()},{` `}
+        <Link href="/">
+          <a
+            style={{
+              color: `white`,
+            }}
+          >
+            UpVision
+          </a>
+        </Link>
+      </div>
+    </>
+  )
 }
 
 export default Footer

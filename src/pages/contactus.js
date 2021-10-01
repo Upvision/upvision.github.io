@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import TextField from '@material-ui/core/TextField';
-import '../css/contact.css';
+import styles from '../css/contact.module.css';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/styles';
@@ -149,12 +149,12 @@ const ContactUs = (props)=> {
     return (
     <>
         <NextSeo title="Contact Us" />
-        <div className="contact_container">
-            <div className="contact_wrapper">   
-                <div className="contact_header">
+        <div className={styles.contact_container}>
+            <div className={styles.contact_wrapper}>   
+                <div className={styles.contact_header}>
                     Contact Us
                 </div>
-                <div className="contact_content">
+                <div className={styles.contact_content}>
                     <form
                         onSubmit={handleOnSubmit}
                     >
@@ -210,13 +210,13 @@ const ContactUs = (props)=> {
                             helperText={values.message.length>0? `${values.message.length}/${255}` : ""}
                         />
                         <SubmitButton 
-                            className="contact_button" 
+                            className={styles.contact_button} 
                             type="submit"
                             disabled={serverState.submitting || !validInput}
                         >Submit</SubmitButton>
-                        <div className="contact_msg">
+                        <div className={styles.contact_msg}>
                             {serverState.status && (
-                                <p className={!serverState.status.ok ? "ErrorMsg" : ""}>
+                                <p className={serverState.status.ok ? styles.ErrorMsg : ""}>
                                 {serverState.status.msg}
                                 </p>
                             )}

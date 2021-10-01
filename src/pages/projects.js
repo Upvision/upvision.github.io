@@ -1,8 +1,10 @@
 import Grid from "@material-ui/core/Grid"
 
-import "../css/projects.css"
+import styles from "../css/projects.module.css"
+import mockData from '../../mockData/githubData.json'
 import ProjectCard from "../components/projectCard"
 import { NextSeo } from 'next-seo'
+import Container from "../components/common/container"
 
 export async function getStaticProps() {
   // ! Github Data
@@ -68,9 +70,8 @@ export async function getStaticProps() {
     data = githubData.organization.repositories.edges.map(edge => {
       return edge.node
     })
-  } else {   
-    import githubData from '../../mockData/githubData.json'
-    data = githubData
+  } else {
+    data = mockData
   }
 
   return {
@@ -82,10 +83,10 @@ const ProjectsPage = ({ data }) => {
   return (
     <>
       <NextSeo title="Projects" />
-      <div className="body-container">
+      <Container>
         <br />
         <br />
-        <div className="projects-header">Projects</div>
+        <div className={styles.projectsHeader}>Projects</div>
         <br />
         <Grid container spacing={3}>
           {data.map((projectCard, index) => {
@@ -105,7 +106,7 @@ const ProjectsPage = ({ data }) => {
             )
           })}
         </Grid>
-      </div>
+      </Container>
     </>
   )
 }

@@ -1,4 +1,4 @@
-import { router } from "next/router"
+import { useRouter } from "next/router"
 import PropTypes from "prop-types"
 import React from "react"
 import Grid from "@material-ui/core/Grid"
@@ -6,7 +6,6 @@ import Slider from "@material-ui/core/Slider"
 import { createTheme } from "@material-ui/core/styles"
 import { ThemeProvider } from "@material-ui/styles"
 
-import "../css/navbar.css"
 import { transparent } from "material-ui/styles/colors"
 
 const muiTheme = createTheme({
@@ -42,6 +41,26 @@ const muiTheme = createTheme({
     },
   },
 })
+
+// h1 {
+//   display: block;
+//   margin: 0;
+//   padding: 0;
+//   margin-bottom: 1.45rem;
+//   color: inherit;
+//   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+//     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+//   font-weight: bold;
+//   text-rendering: optimizeLegibility;
+//   font-size: 2.25rem;
+//   line-height: 1.1;
+// }
+
+// #nav{
+//   width: 100%;
+//   margin: 0px;
+// }
+
 
 const marks = [
   {
@@ -80,8 +99,9 @@ const siteMap = [
 ]
 
 function Navbar(props) {
+  const router = useRouter()
   const { mark, setMark, path } = props
-  let location = path.pathname
+  let location = path
   const [value, setValue] = React.useState(0)
   const [expectedValue, setExpectedValue] = React.useState(0)
 

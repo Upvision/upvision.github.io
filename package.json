@@ -7,16 +7,17 @@
   "dependencies": {
     "@material-ui/core": "latest",
     "@material-ui/icons": "latest",
+    "@stitches/react": "^1.2.1",
     "global": "^4.4.0",
     "googleapis": "^88.2.0",
     "material-ui": "^0.15.0",
     "moment-mini": "^2.24.0",
     "next": "latest",
     "next-seo": "^4.28.1",
+    "next-transpile-modules": "^8.0.0",
     "prop-types": "^15.7.2",
     "react": "latest",
     "react-dom": "latest",
-    "react-helmet": "^6.1.0",
     "react-spring": "^8.0.27",
     "react-three-fiber": "^5.0.3",
     "three": "^0.126.1"

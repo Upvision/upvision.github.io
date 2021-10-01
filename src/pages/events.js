@@ -1,9 +1,12 @@
-import "../css/events.css"
-import EventCard from "../components/eventCard"
 import { NextSeo } from 'next-seo'
 
+import styles from "../css/events.module.css"
+import aboutStyles from "../css/about.module.css"
+import Container from '../components/common/container'
+import EventCard from "../components/eventCard"
+import data from "../../mockData/calendarData.json"
+
 export async function getStaticProps() {
-  import data from "../../data/calendarData.json"
   // const googleAuth = process.env.GCAUTH
   // const calendarId = "rishi1998@gmail.com"
 
@@ -34,13 +37,13 @@ export async function getStaticProps() {
 function Events({ data }) {
 
   return (
-    <div className="body-container">
+    <Container>
       <NextSeo title="Events" />
       <br />
       <br />
-      <div className="header">Events</div>
-      <div className="hero-section">
-        <div className="card-grid">
+      <div className={styles.header}>Events</div>
+      <div className={styles.heroSection}>
+        <div className={styles.cardGrid}>
           {data.length !== 0 ? (
             data.map((event, index) => (
               <EventCard
@@ -54,9 +57,9 @@ function Events({ data }) {
               />
             ))
           ) : (
-            <div className="about_container">
-              <div className="about_wrapper center">
-                <div className="about_content">
+            <div className={aboutStyles.about_container}>
+              <div className={aboutStyles.about_wrapper + aboutStyles.center}>
+                <div className={aboutStyles.about_content}>
                   <p>No events scheduled.</p>
                 </div>
               </div>
@@ -64,7 +67,7 @@ function Events({ data }) {
           )}
         </div>
       </div>
-    </div>
+    </Container>
   )
 }
 

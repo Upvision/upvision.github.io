@@ -1,4 +1,4 @@
-import "../css/layout.css"
+import styles from "../css/layout.module.css"
 import Navbar from "./navbar"
 import Footer from "./footer"
 import Hero from "./hero"
@@ -6,7 +6,7 @@ import LoaderSVG from "../images/loader.svg"
 
 const Layout = ({ location, children }) => {
   return (
-    <div id="Page">
+    <div id={styles.Page}>
       <div
         key={`loader`}
         id="___loader"
@@ -29,9 +29,9 @@ const Layout = ({ location, children }) => {
       <div id="hero">
         <Hero />
       </div>
-      <div className="wrapper">
+      <div className={styles.wrapper}>
         <Navbar path={location} />
-        <div className="content">
+        <div className={styles.content}>
           {/* <TransitionProvider location={location}>
             <TransitionViews>{children}</TransitionViews>
           </TransitionProvider> */}

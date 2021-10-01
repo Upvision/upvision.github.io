@@ -1,9 +1,10 @@
 import React from "react"
-import "../css/members.css"
+import styles from "../css/members.module.css"
 import InstagramIcon from "@material-ui/icons/Instagram"
 import LinkedInIcon from "@material-ui/icons/LinkedIn"
 import Grid from "@material-ui/core/Grid"
 import GitHubIcon from "@material-ui/icons/GitHub"
+
 function MembersCard(props) {
   let { name, about, post, igUrl, linkedInUrl, githubUrl } = props
 
@@ -37,19 +38,19 @@ function MembersCard(props) {
   return (
     <>
       <Grid>
-        <div className="flip-card" style={{ width: "320px", height: "320px" }}>
-          <div className="flip-card-inner">
-            <div className="flip-card-front">
+        <div className={styles.flip_card} style={{ width: "320px", height: "320px" }}>
+          <div className={styles.flip_card_inner}>
+            <div className={styles.flip_card_front}>
               <img
                 src={photoUrl}
                 alt={name + " | Image"}
                 onError={imageError}
                 style={{ width: 320, height: 320, borderRadius: 320 / 2 }}
-                className="memberCardImg"
+                className={styles.memberCardImg}
               />
             </div>
             <div
-              className="flip-card-back"
+              className={styles.flip_card_back}
               style={{ width: 320, height: 320, borderRadius: 320 / 2 }}
             >
               <div
@@ -60,21 +61,21 @@ function MembersCard(props) {
                 <small>{post}</small>
 
                 <div style={{ paddingLeft: "10px", paddingRight: "10px" }}>
-                  <hr className="hr-style" />
+                  <hr className={styles.hr_style} />
                   {about ? <p>{about}</p> : null}
                   <Grid>
                     {igUrl ? (
-                      <a href={igUrl} className="icons">
+                      <a href={igUrl} className={styles.icons}>
                         <InstagramIcon />
                       </a>
                     ) : null}
                     {linkedInUrl ? (
-                      <a href={linkedInUrl} className="icons">
+                      <a href={linkedInUrl} className={styles.icons}>
                         <LinkedInIcon />
                       </a>
                     ) : null}
                     {githubUrl ? (
-                      <a href={githubUrl} className="icons">
+                      <a href={githubUrl} className={styles.icons}>
                         <GitHubIcon />
                       </a>
                     ) : null}
