@@ -1,0 +1,39 @@
+[
+  {
+    "kind": "calendar#event",
+    "etag": "\"3208037213020000\"",
+    "id": "15pr916b51a0dng7ojr939jb0s",
+    "status": "confirmed",
+    "htmlLink": "https://www.google.com/calendar/event?eid=MTVwcjkxNmI1MWEwZG5nN29qcjkzOWpiMHMgcmlzaGkxOTk4QG0",
+    "created": "2020-10-29T22:34:09.000Z",
+    "updated": "2020-10-30T00:43:26.510Z",
+    "summary": "Hello World",
+    "description": "\nThis is an informative description.\n\nI really think this information is enough.",
+    "creator": {
+      "email": "rishi1998@gmail.com",
+      "self": true
+    },
+    "organizer": {
+      "email": "rishi1998@gmail.com",
+      "self": true
+    },
+    "start": {
+      "date": "2020-10-31"
+    },
+    "end": {
+      "date": "2020-11-01"
+    },
+    "transparency": "transparent",
+    "iCalUID": "15pr916b51a0dng7ojr939jb0s@google.com",
+    "sequence": 0,
+    "attachments": [
+      {
+        "fileUrl": "https://drive.google.com/file/d/1q4_oQk8ZnuTtRjP01sppPS-C_NEK0_YB/view?usp=drive_web",
+        "title": "uSCxV5P.jpeg",
+        "mimeType": "image/jpeg",
+        "iconLink": "https://drive-thirdparty.googleusercontent.com/16/type/image/jpeg",
+        "fileId": "1q4_oQk8ZnuTtRjP01sppPS-C_NEK0_YB"
+      }
+    ]
+  }
+]

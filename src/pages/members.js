@@ -1,20 +1,24 @@
-import React from "react"
 import Grid from "@material-ui/core/Grid"
 import MembersCard from "../components/membersCard"
 import SEO from "../components/seo"
-import data from "../../data/membersData.json"
 
-function members() {
-  const members = data
-  const generalSecretary = members.find(member =>
+export async function getStaticProps() {
+  import data from "../../data/membersData.json"
+  return {
+    props: { data }
+  }
+}
+
+function members({ data }) {
+  const generalSecretary = data.find(member =>
     member.post.startsWith("General Secretary")
   )
 
-  const deputyGeneralSecretaries = members.filter(member =>
+  const deputyGeneralSecretaries = data.filter(member =>
     member.post.startsWith("Deputy General Secretary")
   )
 
-  const executiveMembers = members.filter(member =>
+  const executiveMembers = data.filter(member =>
     member.post.startsWith("Executive Member")
   )
 
