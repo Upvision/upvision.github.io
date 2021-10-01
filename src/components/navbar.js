@@ -1,15 +1,15 @@
-import { navigate } from "gatsby"
+import { router } from "next/router"
 import PropTypes from "prop-types"
 import React from "react"
 import Grid from "@material-ui/core/Grid"
 import Slider from "@material-ui/core/Slider"
-import { createMuiTheme } from "@material-ui/core/styles"
+import { createTheme } from "@material-ui/core/styles"
 import { ThemeProvider } from "@material-ui/styles"
 
 import "../css/navbar.css"
 import { transparent } from "material-ui/styles/colors"
 
-const muiTheme = createMuiTheme({
+const muiTheme = createTheme({
   overrides: {
     MuiSlider: {
       thumb: {
@@ -120,7 +120,7 @@ function Navbar(props) {
         else if (currentValue > finalValue) setValue(currentValue--)
       }
     }, 7)
-    navigate(siteMap[Math.max(0, finalValue / 20)])
+    router.push(siteMap[Math.max(0, finalValue / 20)])
   }
 
   // React.useEffect(() => {

@@ -1,12 +1,7 @@
-import React from "react"
-import { TransitionProvider, TransitionViews } from "gatsby-plugin-transitions";
-
+import "../css/layout.css"
 import Navbar from "../components/navbar"
 import Footer from "../components/footer"
-import "../css/layout.css"
-
 import Hero from "../components/hero"
-
 import LoaderSVG from "../images/loader.svg"
 
 const Layout = ({location, children}) => {

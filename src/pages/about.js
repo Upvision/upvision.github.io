@@ -1,10 +1,10 @@
 import React from "react"
-import SEO from "../components/seo"
+import { NextSeo } from 'next-seo'
 import "../css/about.css"
 
 const AboutUs = () => (
   <>
-    <SEO title="About Us" />
+    <NextSeo title="About Us" />
     <div className="about_container">
       <div className="about_wrapper">
         <div className="about_header">About Us</div>

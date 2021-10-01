@@ -1,5 +1,8 @@
 import "../css/global.css";
 import App from 'next/app';
+import { DefaultSeo } from 'next-seo';
+import SEO from '../next-seo.config';
+
 import 'typeface-rubik';
 
 export default App({ component, pageProps }) {
@@ -8,5 +11,8 @@ export default App({ component, pageProps }) {
     loader.style.opacity = "0"
     loader.style.visibility = "hidden"
   }, 1000)
-  return <Component {...pageProps} />
+  return <>
+    <DefaultSeo {...SEO} />
+    <Component {...pageProps} />
+  </>
 }

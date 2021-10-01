@@ -1,9 +1,8 @@
-import React from "react"
-import SEO from "../components/seo"
+import { NextSeo } from 'next-seo'
 
 const NotFoundPage = () => (
   <>
-    <SEO title="404: Not found" />
+    <NextSeo title="404: Not found" />
     <div className="about_container">
       <div className="about_wrapper center">
         <div className="about_header">404: Page Not Found</div>

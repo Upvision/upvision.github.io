@@ -1,5 +1,4 @@
-import { Link } from "gatsby"
-import React from 'react'
+import { Link } from 'next/link'
 
 import "../css/footer.css"
 
@@ -9,14 +8,12 @@ function Footer() {
             <div className="footer">  
                 © {new Date().getFullYear()},
                 {` `}
-                {/* <a href="https://www.gatsbyjs.com">UpVision</a> */}
-                <Link
-                    to="/"
-                    style={{
-                        color: `white`,
-                    }}
-                >
-                    UpVision
+                <Link href="/">
+                    <a 
+                        style={{
+                            color: `white`,
+                        }}
+                    >UpVision</a>
                 </Link>
             </div>
         </>

@@ -1,6 +1,6 @@
 import "../css/events.css"
 import EventCard from "../components/eventCard"
-import SEO from "../components/seo"
+import { NextSeo } from 'next-seo'
 
 export async function getStaticProps() {
   import data from "../../data/calendarData.json"
@@ -35,7 +35,7 @@ function Events({ data }) {
 
   return (
     <div className="body-container">
-      <SEO title="Events" />
+      <NextSeo title="Events" />
       <br />
       <br />
       <div className="header">Events</div>

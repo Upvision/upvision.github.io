@@ -1,9 +1,9 @@
-import SEO from "../components/seo"
+import { NextSeo } from 'next-seo'
 
 const IndexPage = () => {
   return (
     <>
-    <SEO title="Home" />
+    <NextSeo title="Home" />
     </>
   )
 }

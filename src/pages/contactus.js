@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/styles';
 import { AlternateEmail, Person, Send } from '@material-ui/icons'
 import axios from "axios";
-import SEO from "../components/seo";
+import { NextSeo } from 'next-seo';
 
 const SubmitButton = withStyles({
     root: {
@@ -148,7 +148,7 @@ const ContactUs = (props)=> {
 
     return (
     <>
-        <SEO title="Contact Us" />
+        <NextSeo title="Contact Us" />
         <div className="contact_container">
             <div className="contact_wrapper">   
                 <div className="contact_header">

@@ -1,6 +1,6 @@
 import Grid from "@material-ui/core/Grid"
 import MembersCard from "../components/membersCard"
-import SEO from "../components/seo"
+import { NextSeo } from 'next-seo'
 
 export async function getStaticProps() {
   import data from "../../data/membersData.json"
@@ -24,7 +24,7 @@ function members({ data }) {
 
   return (
     <>
-      <SEO title="Members" />
+      <NextSeo title="Members" />
       <h1 className="poshead">GENERAL SECRETARY</h1>
       <Grid
         container

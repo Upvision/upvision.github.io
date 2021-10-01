@@ -12,6 +12,7 @@
     "material-ui": "^0.15.0",
     "moment-mini": "^2.24.0",
     "next": "latest",
+    "next-seo": "^4.28.1",
     "prop-types": "^15.7.2",
     "react": "latest",
     "react-dom": "latest",
