@@ -1,30 +1,46 @@
-import React, { useEffect } from "react"
-import PropTypes from "prop-types"
-
+import "../css/layout.css"
 import Navbar from "./navbar"
 import Footer from "./footer"
-import "../css/layout.css"
-
 import Hero from "./hero"
+import LoaderSVG from "../images/loader.svg"
 
-const Layout = ({children, path}) => {
-
+const Layout = ({ location, children }) => {
   return (
     <div id="Page">
+      <div
+        key={`loader`}
+        id="___loader"
+        style={{
+          alignItems: "center",
+          backgroundColor: "#333",
+          display: "flex",
+          justifyContent: "center",
+          position: "absolute",
+          left: 0,
+          top: 0,
+          right: 0,
+          bottom: 0,
+          zIndex: 100,
+          transition: "all 2s ease",
+        }}
+      >
+        <img src={LoaderSVG} alt="loading spinner" width="150" height="150" />
+      </div>
       <div id="hero">
-        <Hero/>
+        <Hero />
       </div>
       <div className="wrapper">
-        <Navbar path={path} />
-        <div className="content">{children}</div>
+        <Navbar path={location} />
+        <div className="content">
+          {/* <TransitionProvider location={location}>
+            <TransitionViews>{children}</TransitionViews>
+          </TransitionProvider> */}
+          { children }
+        </div>
         <Footer />
       </div>
     </div>
   )
 }
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
-export default Layout;
+export default Layout

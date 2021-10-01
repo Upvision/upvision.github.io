@@ -1,7 +1,9 @@
-import "../css/global.css";
 import App from 'next/app';
 import { DefaultSeo } from 'next-seo';
+
+import "../css/global.css";
 import SEO from '../next-seo.config';
+import Layout from '../components/layout'
 
 import 'typeface-rubik';
 
@@ -13,6 +15,8 @@ export default App({ component, pageProps }) {
   }, 1000)
   return <>
     <DefaultSeo {...SEO} />
-    <Component {...pageProps} />
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
   </>
 }

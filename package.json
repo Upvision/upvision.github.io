@@ -2,7 +2,7 @@
   "name": "upvision",
   "private": false,
   "description": "Webpage for the tech club of NIT Delhi",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "UpVision<techclub@nitdelhi.ac.in>",
   "dependencies": {
     "@material-ui/core": "latest",
@@ -27,9 +27,6 @@
     "prettier": "2.1.1",
     "typeface-rubik": "^1.1.13"
   },
-  "keywords": [
-    "gatsby"
-  ],
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
@@ -37,12 +34,5 @@
     "start": "next start",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "fetch": "node --harmony-top-level-await -r dotenv/config ./fetch-data.mjs"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }
