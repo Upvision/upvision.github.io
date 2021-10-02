@@ -1,5 +1,4 @@
 import styles from "../css/projects.module.css"
-import arrow from "../images/arrow.svg"
 
 function ProjectCard(props) {
   const { title, description, repoLink, imageURL, contributers } = props
@@ -54,7 +53,7 @@ function ProjectCard(props) {
             </div>
             <div className={styles.card_repoUrl}>
               <a href={repoLink} rel="noreferrer" target="_blank">
-                <img src={arrow} alt="Repository..." width="69" />
+                <img src="/images/arrow.svg" alt="Repository..." width="69" />
               </a>
             </div>
           </div>

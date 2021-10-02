@@ -34,7 +34,7 @@ body {
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
-  background-image: url("../images/bg.png");
+  background-image: url("/images/bg.png");
   background-repeat: no-repeat;
   background-size: cover;
   border: 5px solid #13e8b5;

@@ -1,4 +1,5 @@
 import { NextSeo } from 'next-seo'
+
 import styles from "../css/about.module.css"
 
 const AboutUs = () => (

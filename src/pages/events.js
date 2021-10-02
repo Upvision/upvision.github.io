@@ -37,13 +37,11 @@ export async function getStaticProps() {
 function Events({ data }) {
 
   return (
-    <Container>
+    <>
       <NextSeo title="Events" />
-      <br />
-      <br />
-      <div className={styles.header}>Events</div>
-      <div className={styles.heroSection}>
-        <div className={styles.cardGrid}>
+      <Container>
+        <div className={styles.header}>Events</div>
+        <div className={styles.card_grid}>
           {data.length !== 0 ? (
             data.map((event, index) => (
               <EventCard
@@ -66,8 +64,8 @@ function Events({ data }) {
             </div>
           )}
         </div>
-      </div>
-    </Container>
+      </Container>
+    </>
   )
 }
 

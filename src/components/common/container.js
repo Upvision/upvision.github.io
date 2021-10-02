@@ -5,6 +5,11 @@ export default styled('div', {
   paddingLeft: '15px',
   marginRight: 'auto',
   marginLeft: 'auto',
+  height: '100%',
+  marginTop: '4em',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-around',
   color: 'white',
   '@media (min-width: 768px)': {
     width: '750px'
