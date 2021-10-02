@@ -1,30 +1,25 @@
-import React, { useEffect } from "react"
-import PropTypes from "prop-types"
-
+import styles from "../css/layout.module.css"
 import Navbar from "./navbar"
 import Footer from "./footer"
-import "../css/layout.css"
-
 import Hero from "./hero"
-
-const Layout = ({children, path}) => {
-
+const Layout = ({ location, children }) => {
   return (
-    <div id="Page">
+    <div id={styles.Page}>
       <div id="hero">
-        <Hero/>
+        <Hero />
       </div>
-      <div className="wrapper">
-        <Navbar path={path} />
-        <div className="content">{children}</div>
+      <div className={styles.wrapper}>
+        <Navbar path={location} />
+        <div className={styles.content}>
+          {/* <TransitionProvider location={location}>
+            <TransitionViews>{children}</TransitionViews>
+          </TransitionProvider> */}
+          { children }
+        </div>
         <Footer />
       </div>
     </div>
   )
 }
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
-export default Layout;
+export default Layout

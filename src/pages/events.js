@@ -1,22 +1,49 @@
-import React from "react"
-import EventCard from "../components/eventCard"
-import "../css/events.css"
-import data from "../../data/calendarData.json"
-import SEO from "../components/seo"
+import { NextSeo } from 'next-seo'
 
-function Events(props) {
-  const events = data
+import styles from "../css/events.module.css"
+import aboutStyles from "../css/about.module.css"
+import Container from '../components/common/container'
+import EventCard from "../components/eventCard"
+import data from "../../mockData/calendarData.json"
+
+export async function getStaticProps() {
+  // const googleAuth = process.env.GCAUTH
+  // const calendarId = "rishi1998@gmail.com"
+
+  // let now = new Date();
+  // let nowp3 = new Date(now);
+  // nowp3.setMonth(nowp3.getMonth() + 3);
+  // if (nowp3.getDate() != now.getDate()) nowp3.setDate(0);
+
+  // await axios({
+  //     url: `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events`,
+  //     method: 'get',
+  //     params: {
+  //         key: `${ googleAuth }`,
+  //         timeMax: `${ nowp3.toISOString() }`,
+  //         timeMin: `${ now.toISOString() }`
+  //     }
+  // }).then(res => {
+  //     fs.writeFile('./data/calendarData.json', JSON.stringify(res.data.items, null, 2), err => {
+  //         if (err) throw err;
+  //         console.log("Calendar Data written, succesfully!");
+  //     })
+  // });
+  return {
+    props: { data }
+  }
+}
+
+function Events({ data }) {
 
   return (
-    <div className="body-container">
-      <SEO title="Events" />
-      <br />
-      <br />
-      <div className="header">Events</div>
-      <div className="hero-section">
-        <div className="card-grid">
-          {events.length !== 0 ? (
-            events.map((event, index) => (
+    <>
+      <NextSeo title="Events" />
+      <Container>
+        <div className={styles.header}>Events</div>
+        <div className={styles.card_grid}>
+          {data.length !== 0 ? (
+            data.map((event, index) => (
               <EventCard
                 key={index}
                 title={event.summary}
@@ -28,17 +55,17 @@ function Events(props) {
               />
             ))
           ) : (
-            <div className="about_container">
-              <div className="about_wrapper center">
-                <div className="about_content">
+            <div className={aboutStyles.about_container}>
+              <div className={aboutStyles.about_wrapper + aboutStyles.center}>
+                <div className={aboutStyles.about_content}>
                   <p>No events scheduled.</p>
                 </div>
               </div>
             </div>
           )}
         </div>
-      </div>
-    </div>
+      </Container>
+    </>
   )
 }
 

@@ -1,13 +1,11 @@
 import React, { Suspense, useRef, useState } from 'react'
 import { Canvas, useFrame, useLoader } from 'react-three-fiber'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-import { Location } from '@reach/router';
-
-import logoModel from "../assets/logo.glb";
+import { useRouter } from 'next/router'
 
 function Logo(props) {
     const group = useRef();
-    const { nodes } = useLoader(GLTFLoader, logoModel);
+    const { nodes } = useLoader(GLTFLoader, "/logo.glb");
 
     const [hovered, setHover] = useState(false);
     const [active, setActive] = useState(false);
@@ -39,6 +37,8 @@ function Logo(props) {
 React.memo(Logo);
 
 function Hero(props) {
+    const router = useRouter();
+    const location = router.pathname
     return(
         <Canvas shadowMap camera={{ fov: 75 }}>
             <ambientLight intensity={0.2} />
@@ -57,15 +57,7 @@ function Hero(props) {
                 shadow-camera-bottom={-10}
             />
             <Suspense fallback={null}>
-                <Location>
-                    {({location})=> {
-                        if (location.pathname === "/") {
-                            return <Logo position = {[0, 0, 0]} />
-                        } else {
-                            return null;
-                        }
-                    }}
-                </Location>
+                {location === "/" && <Logo position = {[0, 0, 0]} />}
             </Suspense>
             <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2.5, 0]} receiveShadow>
                 <planeBufferGeometry attach="geometry" args={[10, 10]} />

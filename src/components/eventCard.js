@@ -1,7 +1,4 @@
-import React from "react"
-import "../css/events.css"
-import Grid from "@material-ui/core/Grid"
-import Box from "@material-ui/core/Box"
+import styles from "../css/events.module.css"
 import moment from "moment-mini"
 
 function EventCard(props) {
@@ -17,32 +14,24 @@ function EventCard(props) {
 
   return (
     <>
-      <a className="card" href={link}>
+      <a className={styles.card} href={link}>
         <div
-          className="card__background"
+          className={styles.card__background}
           style={{
             backgroundImage:
               "linear-gradient(to bottom right, #13e8b5, #13a884 )",
           }}
         ></div>
-        <div className="card__content">
-          <Grid container spacing={3}>
-            <Box clone order={{ xs: 2, md: 1 }}>
-              <Grid item xs={12} md={3} lg={4}>
-                <img src={imageUrl} alt={title} className={"img-on-hover "} />
-              </Grid>
-            </Box>
-            <Box clone order={{ xs: 1, md: 2 }}>
-              <Grid item xs={12} md={9} lg={8}>
-                <p className="card__category">
-                  {startDate.format("Do MMMM YYYY")} -{" "}
-                  {endDate.format("Do MMMM YYYY")}
-                </p>
-                <h3 className="card__heading">{title}</h3>
-                <p>{description}</p>
-              </Grid>
-            </Box>
-          </Grid>
+        <div className={styles.card__content}>
+          <img src={imageUrl} alt={title} className={styles.img_on_hover} />
+          <div className={styles.card__description}>
+            <p className={styles.card__category}>
+              {startDate.format("Do MMMM YYYY")} -{" "}
+              {endDate.format("Do MMMM YYYY")}
+            </p>
+            <h3 className={styles.card__heading}>{title}</h3>
+            <p>{description}</p>
+          </div>
         </div>
       </a>
     </>

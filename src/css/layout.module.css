@@ -18,9 +18,6 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-.content>div, .content>div>div, .content>div>div>div {
-  height: 100%;
-}
 
 .wrapper .content::-webkit-scrollbar {
   display: none;

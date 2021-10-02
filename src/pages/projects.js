@@ -1,20 +1,92 @@
-import React from "react"
-
-import "../css/projects.css"
-import ProjectCard from "../components/projectCard"
 import Grid from "@material-ui/core/Grid"
 
-import SEO from "../components/seo"
-import data from "../../data/githubData.json"
+import styles from "../css/projects.module.css"
+import mockData from '../../mockData/githubData.json'
+import ProjectCard from "../components/projectCard"
+import { NextSeo } from 'next-seo'
+import Container from "../components/common/container"
 
-const ProjectsPage = () => {
+export async function getStaticProps() {
+  // ! Github Data
+  const ghKey = process.env.GHTOKEN
+  
+  let data = {}
+  if (ghKey) {
+    const query = `query OrgDetails {
+      organization(login:"UpVision") {
+        repositories(first: 10, orderBy: {field: STARGAZERS, direction: DESC}) {
+          edges {
+            node {
+              name
+              description
+              url
+              stargazers {
+                totalCount
+              }
+              openGraphImageUrl
+            }
+          }
+        }
+      }
+    }`
+
+    let githubData = await fetch(
+      'https://api.github.com/graphql',
+      {
+        method: 'POST',
+        headers: { 
+          'Content-Type' : 'application/json',
+          'Authorization': `bearer ${ ghKey }`
+        },
+        body: JSON.stringify({ query }),
+      }
+    ).then(res => res.json())
+
+    await Promise.all(
+      githubData.organization.repositories.edges.map(async edge => {
+        edge.node.contributors = []
+        let contributors = await fetch(
+          `https://api.github.com/repos/UpVision/${edge.node.name}/contributors`,
+          {
+            method: 'GET',
+            headers: {
+              'Authorization': `token ${ghKey}`,
+            },
+          }
+        )
+
+        if (contributors.data) {
+          contributors.data.forEach(contributor => {
+            edge.node.contributors.push({
+              profileLink: contributor.url,
+              imageURL: contributor.avatar_url,
+              altTag: contributor.login,
+            })
+          })
+        }
+      })
+    )
+
+    data = githubData.organization.repositories.edges.map(edge => {
+      return edge.node
+    })
+  } else {
+    data = mockData
+  }
+
+  return {
+    props: { data }
+  }
+}
+
+const ProjectsPage = ({ data }) => {
   return (
     <>
-      <SEO title="Projects" />
-      <div className="body-container">
+      <NextSeo title="Projects" />
+      <Container>
         <br />
         <br />
-        <div className="projects-header">Projects</div>
+        <div className={styles.projectsHeader}>Projects</div>
         <br />
         <Grid container spacing={3}>
           {data.map((projectCard, index) => {
@@ -34,8 +106,9 @@ const ProjectsPage = () => {
             )
           })}
         </Grid>
-      </div>
+      </Container>
     </>
   )
 }
+
 export default ProjectsPage

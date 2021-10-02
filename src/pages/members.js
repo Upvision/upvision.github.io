@@ -1,26 +1,30 @@
-import React from "react"
 import Grid from "@material-ui/core/Grid"
 import MembersCard from "../components/membersCard"
-import SEO from "../components/seo"
-import data from "../../data/membersData.json"
+import data from "../../mockData/membersData.json"
+import { NextSeo } from 'next-seo'
 
-function members() {
-  const members = data
-  const generalSecretary = members.find(member =>
+export async function getStaticProps() {
+  return {
+    props: { data }
+  }
+}
+
+function members({ data }) {
+  const generalSecretary = data.find(member =>
     member.post.startsWith("General Secretary")
   )
 
-  const deputyGeneralSecretaries = members.filter(member =>
+  const deputyGeneralSecretaries = data.filter(member =>
     member.post.startsWith("Deputy General Secretary")
   )
 
-  const executiveMembers = members.filter(member =>
+  const executiveMembers = data.filter(member =>
     member.post.startsWith("Executive Member")
   )
 
   return (
     <>
-      <SEO title="Members" />
+      <NextSeo title="Members" />
       <h1 className="poshead">GENERAL SECRETARY</h1>
       <Grid
         container

@@ -1,10 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400|Poppins:300,400,800&display=swap");
-* {
-  margin: 0px;
-  padding: 0;
-}
 
-.projects-header {
+.projectsHeader {
   font-family: "Rubik", sans-serif;
   font-weight: 900;
   font-style: italic;
@@ -40,7 +36,7 @@
 .container .post:hover .body_post {
   height: 60%;
 }
-.container .post:hover .main-img {
+.container .post:hover .main_img {
   transform: translatey(-10px) translatex(-5px) scale(1.05);
 }
 .container .post .header_post {
@@ -58,7 +54,7 @@
   justify-content: center;
   align-content: center;
 }
-.container .post .header_post .main-img {
+.container .post .header_post .main_img {
   min-height: 100%;
   width: 100%;
   transition: ease-in-out 600ms;
@@ -260,27 +256,5 @@
   100% {
     opacity: 1;
     bottom: 0px;
-  }
-}
-
-.body-container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-@media (min-width: 768px) {
-  .body-container {
-    width: 750px;
-  }
-}
-@media (min-width: 992px) {
-  .body-container {
-    width: 970px;
-  }
-}
-@media (min-width: 1200px) {
-  .body-container {
-    width: 1170px;
   }
 }
