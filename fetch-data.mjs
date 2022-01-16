@@ -69,25 +69,25 @@ fs.writeFile('./data/githubData.json', JSON.stringify(finalData, null, 2), err =
 })
 
 // ! Google calendar Data
-const googleAuth = process.env.GCAUTH
-const calendarId = "rishi1998@gmail.com"
+// const googleAuth = process.env.GCAUTH
+// const calendarId = "rishi1998@gmail.com"
 
-let now = new Date();
-let nowp3 = new Date(now);
-nowp3.setMonth(nowp3.getMonth() + 3);
-if (nowp3.getDate() != now.getDate()) nowp3.setDate(0);
+// let now = new Date();
+// let nowp3 = new Date(now);
+// nowp3.setMonth(nowp3.getMonth() + 3);
+// if (nowp3.getDate() != now.getDate()) nowp3.setDate(0);
 
-await axios({
-    url: `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events`,
-    method: 'get',
-    params: {
-        key: `${ googleAuth }`,
-        timeMax: `${ nowp3.toISOString() }`,
-        timeMin: `${ now.toISOString() }`
-    }
-}).then(res => {
-    fs.writeFile('./data/calendarData.json', JSON.stringify(res.data.items, null, 2), err => {
-        if (err) throw err;
-        console.log("Calendar Data written, succesfully!");
-    })
-});
+// await axios({
+//     url: `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events`,
+//     method: 'get',
+//     params: {
+//         key: `${ googleAuth }`,
+//         timeMax: `${ nowp3.toISOString() }`,
+//         timeMin: `${ now.toISOString() }`
+//     }
+// }).then(res => {
+//     fs.writeFile('./data/calendarData.json', JSON.stringify(res.data.items, null, 2), err => {
+//         if (err) throw err;
+//         console.log("Calendar Data written, succesfully!");
+//     })
+// });
