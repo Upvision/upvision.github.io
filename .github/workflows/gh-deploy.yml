@@ -41,5 +41,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           publish_branch: release
-          cname: upvision.co
+#           cname: upvision.co
       
